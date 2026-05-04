@@ -1,0 +1,1 @@
+- [Banter Media Group Website Project](project_banter_website.md) — Netlify-hosted photo portfolio, vanilla HTML/CSS/JS, Cloudinary serverless function, no build tooling

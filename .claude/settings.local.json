@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -u \"917191864973737:DVa4a3WDK6-eCD-eO0XADZTjBFQ\" \"https://api.cloudinary.com/v1_1/dqwlyubse/folders/Events/College-Station/Grad-Photos\")",
+      "Bash(python -m json.tool)"
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event — Banter Media Group</title>
+  <link rel="icon" href="assets/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="meet-the-team.html">Team</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="interested.html">Interested</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <a href="#" id="back-link" class="back-link">← Back</a>
+    <p class="section-label" id="cat-label">Event</p>
+    <h1 class="section-title" id="event-title">LOADING...</h1>
+    <p class="section-sub" style="margin-bottom:0;">Click any photo to view full size. Use arrow keys to navigate.</p>
+  </div>
+
+  <section style="background:var(--white);">
+    <div id="photos-grid" class="photo-grid">
+      <div class="loader"><div class="spinner"></div></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-prev" onclick="prevPhoto()">&#8249;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Full size photo" />
+    <button class="lightbox-next" onclick="nextPhoto()">&#8250;</button>
+    <p class="lightbox-counter" id="lightbox-counter"></p>
+  </div>
+
+  <footer>
+    <div>
+      <p class="footer-brand"><img src="assets/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-tagline">Banter Media Group &mdash; Capturing the Culture</p>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="meet-the-team.html">Team</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="interested.html">Interested</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 Banter Media Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+  <script src="photos-data.js"></script>
+  <script>
+    function fmt(name) {
+      return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
+
+    let photos = [];
+    let current = 0;
+
+    function renderGrid(photoList) {
+      const grid = document.getElementById('photos-grid');
+      if (!photoList.length) {
+        grid.innerHTML = '<p class="empty-state">No photos in this album yet.</p>';
+        return;
+      }
+      grid.innerHTML = photoList.map((p, i) => `
+        <div class="photo-item" onclick="openLightbox(${i})">
+          <img src="${p.url}" alt="Photo ${i + 1}" loading="lazy"
+               onload="if(this.naturalWidth>this.naturalHeight)this.closest('.photo-item').classList.add('landscape')" />
+          <div class="photo-hover"><span>View Full</span></div>
+        </div>
+      `).join('');
+    }
+
+    function openLightbox(index) {
+      current = index;
+      const lb  = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src   = photos[current].fullUrl;
+      updateCounter();
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function prevPhoto() {
+      current = (current - 1 + photos.length) % photos.length;
+      document.getElementById('lightbox-img').src = photos[current].fullUrl;
+      updateCounter();
+    }
+
+    function nextPhoto() {
+      current = (current + 1) % photos.length;
+      document.getElementById('lightbox-img').src = photos[current].fullUrl;
+      updateCounter();
+    }
+
+    function updateCounter() {
+      document.getElementById('lightbox-counter').textContent = `${current + 1} / ${photos.length}`;
+    }
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'ArrowLeft')  prevPhoto();
+      if (e.key === 'ArrowRight') nextPhoto();
+      if (e.key === 'Escape')     closeLightbox();
+    });
+
+    const params      = new URLSearchParams(window.location.search);
+    const localAlbumId = params.get('localAlbum') || '';
+    const eventName   = params.get('event') || '';
+    const eventPath   = params.get('path')  || '';
+    const eventTag    = params.get('tag')   || '';
+
+    const backLink = document.getElementById('back-link');
+    backLink.href        = 'work.html';
+    backLink.textContent = '← All Work';
+
+    // ── Local album mode (static data from photos-data.js) ───────────────────
+    if (localAlbumId) {
+      const album = LOCAL_ALBUMS.find(a => a.id === localAlbumId);
+      if (!album) {
+        document.getElementById('event-title').textContent = 'NOT FOUND';
+        document.getElementById('photos-grid').innerHTML = '<p class="empty-state">Album not found.</p>';
+      } else {
+        document.getElementById('cat-label').textContent   = album.tag;
+        document.getElementById('event-title').textContent = album.title.toUpperCase();
+        document.title = `${album.title} — Banter Media Group`;
+
+        photos = album.photos.map(pid => ({
+          url:     cloudUrl(pid, 'w_700,q_auto,f_auto'),
+          fullUrl: cloudUrl(pid, 'q_auto,f_auto'),
+          id:      pid
+        }));
+        renderGrid(photos);
+      }
+
+    // ── Cloudinary function mode (when deployed on Netlify with env vars) ────
+    } else {
+      document.getElementById('cat-label').textContent   = eventTag;
+      document.getElementById('event-title').textContent = fmt(eventName).toUpperCase();
+      document.title = `${fmt(eventName)} — Banter Media Group`;
+
+      async function loadPhotos() {
+        const grid = document.getElementById('photos-grid');
+        try {
+          const res  = await fetch(`/.netlify/functions/cloudinary?action=photos&path=${encodeURIComponent(eventPath)}`);
+          const data = await res.json();
+          photos = data;
+          if (!photos.length) {
+            grid.innerHTML = '<p class="empty-state">No photos in this event yet.</p>';
+            return;
+          }
+          renderGrid(photos);
+        } catch (err) {
+          grid.innerHTML = '<p class="empty-state">Could not load photos. Check your connection.</p>';
+          console.error(err);
+        }
+      }
+
+      loadPhotos();
+    }
+  </script>
+</body>
+</html>

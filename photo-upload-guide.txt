@@ -1,0 +1,94 @@
+BANTER MEDIA GROUP — HOW TO ADD PHOTOS TO THE WEBSITE
+======================================================
+(Written for Josh — no tech experience needed)
+
+
+STEP 1: LOG IN
+--------------
+Go to: cloudinary.com
+Log in with the Banter Media Group account credentials.
+Once in, click "Media Library" in the top menu.
+
+
+STEP 2: FIND THE RIGHT FOLDER
+------------------------------
+You will see a folder called "Events". This is the main folder.
+Everything goes inside here.
+
+Inside Events, there are folders for each type of shoot:
+  → Weddings
+  → Sports
+  → Restaurants
+  → Frat-Parties
+  → Grad-Photos
+
+(These names appear on the website as the categories people click on.)
+
+
+STEP 3: CREATE A FOLDER FOR YOUR NEW EVENT
+-------------------------------------------
+When you have a new event (e.g., a wedding you just shot):
+
+  1. Click into the right category folder (e.g., "Weddings")
+  2. Click "New Folder" (usually a folder icon in the top area)
+  3. Name it something clear like:
+       Smith-Wedding-June-2025
+       Basketball-Tournament-March-2025
+       Local-Eats-Shoot-2025
+
+  ⚠️  Use hyphens (-) instead of spaces in the folder name.
+      The website will automatically turn hyphens into spaces when it displays the name.
+      So "Smith-Wedding-June-2025" shows up on the website as "Smith Wedding June 2025".
+
+
+STEP 4: UPLOAD YOUR PHOTOS
+----------------------------
+  1. Click into the new folder you just created
+  2. Click "Upload" (top right area)
+  3. Drag and drop your exported photos, or browse and select them
+  4. Wait for them to finish uploading
+
+That's it. The website will automatically show the new event and photos
+the next time someone visits the Work page. No code, no emails to Evan.
+
+
+TIPS
+----
+• Export photos from Lightroom before uploading (JPEG, full quality is fine)
+• You can upload multiple photos at once — just drag them all in together
+• The first photo uploaded to a folder becomes the "preview thumbnail"
+  that shows on the category page. Put your best shot in first, or
+  rename the files so the best one is alphabetically first (e.g., 001_bestshot.jpg)
+• You can upload to multiple categories in one session — just navigate
+  to each folder separately
+
+
+FOLDER STRUCTURE SUMMARY
+--------------------------
+Events/
+  └── Weddings/
+        └── Smith-Wedding-June-2025/     ← your photos go here
+        └── Jones-Wedding-August-2025/   ← another wedding, another folder
+  └── Sports/
+        └── Basketball-Tourney-March/
+  └── Restaurants/
+        └── Local-Eats-ATL/
+  └── Frat-Parties/
+        └── Rush-Week-Fall-2025/
+  └── Grad-Photos/
+        └── Class-of-2025-Shoot/
+
+
+ADDING A NEW CATEGORY IN THE FUTURE
+-------------------------------------
+If you start doing a type of shoot that doesn't have a category yet
+(e.g., "Concerts"), create a new folder directly inside "Events":
+  Events/Concerts/Your-New-Event/
+
+The website will automatically pick it up and show it as a new category.
+No one needs to touch the code.
+
+
+QUESTIONS?
+----------
+Reach out to Evan — he can handle anything that doesn't look right on the website side.

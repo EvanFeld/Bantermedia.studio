@@ -1,0 +1,40 @@
+BANTER MEDIA GROUP — BRAND COLOR PALETTE
+==========================================
+
+BACKGROUNDS
+-----------
+--bg          #f4f7fb   Light blue-gray page background
+--bg-alt      #ffffff   Pure white alternate background
+--white       #ffffff   White (used for cards, hero, sections)
+
+BLUES
+-----
+--blue        #2b6cb0   Primary brand blue (buttons, accents, links, underlines)
+--blue-mid    #4a90d9   Mid blue (ticker highlights, CTA label text)
+--blue-pale   #ebf4ff   Pale blue (FAQ callout background, hover tints)
+--blue-muted  rgba(43, 108, 176, 0.09)   Transparent blue tint (subtle backgrounds)
+
+TEXT
+----
+--navy        #0d1e35   Primary text / headlines / logo
+--text        #0d1e35   Body text (same as navy)
+--gray        #64748b   Secondary text / descriptions / sub-labels
+--gray-light  #94a3b8   Muted text / placeholders / meta info
+
+BORDERS
+-------
+--border      #dde5f2   Default border color (cards, inputs, dividers)
+
+BUTTON HOVER
+------------
+btn-primary hover:  #1a4f8a   (darker blue on hover)
+
+STATS / FOOTER / CTA BANNER
+----------------------------
+Background:   var(--navy)  →  #0d1e35
+Stat numbers: var(--blue)  →  #2b6cb0
+
+FONTS
+-----
+Headlines:  Bebas Neue (Google Fonts)
+Body:       Inter — weights 300, 400, 500, 600, 700 (Google Fonts)
