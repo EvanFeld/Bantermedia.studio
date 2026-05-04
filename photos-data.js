@@ -23,7 +23,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'koe-wetzel',
     title:  'Koe Wetzel',
-    tag:    'ChiliFest 2025',
+    tag:    'Live Events',
     folder: 'Events/College-Station/Chili-Fest/Koe-Wetzel',
     cover:  'Koe-Wetzel-2_gz37h1',
     photos: [
@@ -49,7 +49,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'josh-abbott',
     title:  'Josh Abbott',
-    tag:    'ChiliFest 2025',
+    tag:    'Live Events',
     folder: 'Events/College-Station/Chili-Fest/Josh-Abbott',
     cover:  'People-of-Chili-33_ko5lsh',
     photos: [
@@ -67,7 +67,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'treaty-oak',
     title:  'Treaty Oak Revival',
-    tag:    'ChiliFest 2025',
+    tag:    'Live Events',
     folder: 'Events/College-Station/Chili-Fest/Treaty-Oak-Revival',
     cover:  'Treaty-Oak-8_pj5l0c',
     photos: [
@@ -90,7 +90,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'people-of-chili',
     title:  'People of Chili',
-    tag:    'ChiliFest 2025',
+    tag:    'Live Events',
     folder: 'Events/College-Station/Chili-Fest/PEOPLE-OF-CHILI',
     cover:  'People-of-Chili-51_rdlkw9',
     photos: [
@@ -156,7 +156,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'douglass-showcase',
     title:  'Douglass Showcase',
-    tag:    'EOP Basketball',
+    tag:    'Sports',
     folder: 'Events/Sports/EOP-Basketball/Douglass Showcase',
     cover:  'Douglass-Showcase-Selects-51_qlzhpp',
     photos: [
@@ -270,7 +270,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'swaic-kickoff',
     title:  'SWAIC Kickoff',
-    tag:    'EOP Basketball',
+    tag:    'Sports',
     folder: 'Events/Sports/EOP-Basketball/SWAIC-Kickoff',
     cover:  'SWAIC-Selects-42_gkkvyn',
     photos: [
@@ -364,7 +364,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'parker-grad',
     title:  'Parker — Grad Photos',
-    tag:    'Grad Photos',
+    tag:    'Portraits',
     folder: 'Events/College-Station/Grad-Photos/Parker-Grad',
     cover:  'Parker-Grad-Photos-1_hklcfa',
     photos: [
@@ -393,7 +393,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'jennas-ring-dunk',
     title:  "Jenna's Ring Dunk",
-    tag:    'Grad Photos',
+    tag:    'Portraits',
     folder: 'Events/College-Station/Grad-Photos/Jennas-Ring-Dunk',
     cover:  'Jennas-Ring-Dunk-30_uvnvvv',
     photos: [
@@ -437,7 +437,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'group-grad-photos',
     title:  'Group Grad Photos',
-    tag:    'Grad Photos',
+    tag:    'Portraits',
     folder: 'Events/College-Station/Grad-Photos/Group-Grad-Photos',
     cover:  'Group-Grad-Photos-5_nxzfiv',
     photos: [
@@ -535,7 +535,7 @@ const LOCAL_ALBUMS = [
   {
     id:     'nathan-grad',
     title:  'Nathan Gil — Class of 2024',
-    tag:    'Grad Photos',
+    tag:    'Portraits',
     folder: 'Events/College-Station/Grad-Photos/Nathan-Gil',
     cover:  'Nathan-Grad-32_l9slbg',
     photos: [
@@ -590,6 +590,73 @@ const LOCAL_ALBUMS = [
       'Nathan-Grad-51_pcrsne',
     ]
   },
+  {
+    id:     'eden-table',
+    title:  'Eden Table',
+    tag:    'Restaurants',
+    folder: 'Eden-Table',
+    cover:  'Eden-Table-1_zssr55',
+    photos: [
+      'Eden-Table-1_zssr55',
+      'Eden-Table-2_okzcs1',
+      'Eden-Table-3_l8o2po',
+      'Eden-Table-4_zwjqyj',
+      'Eden-Table-5_nok6kw',
+      'Eden-Table-6_tfeuzx',
+      'Eden-Table-7_n45ux5',
+      'Eden-Table-9_dwnsuq',
+      'Eden-Table-10_nh3p7i',
+      'Eden-Table-11_jjqaw2',
+      'Eden-Table-12_s4udrw',
+      'Eden-Table-13_h9udt8',
+      'Eden-Table-14_xsfpro',
+      'Eden-Table-15_zofzdk',
+      'Eden-Table-16_wjmqj0',
+      'Eden-Table-17_fclsq0',
+      'Eden-Table-18_li3tld',
+    ]
+  },
+  {
+    id:     'magnolia-baseball',
+    title:  'Magnolia Baseball',
+    tag:    'Sports',
+    folder: 'Eli-Baseball',
+    cover:  'Eli-Baseball-13_xp8fei',
+    photos: [
+      'Eli-Baseball-1_af3x4h',
+      'Eli-Baseball-2_nvg05q',
+      'Eli-Baseball-3_bdbsrj',
+      'Eli-Baseball-4_t72bdt',
+      'Eli-Baseball-5_gyhhfi',
+      'Eli-Baseball-6_zwa4n6',
+      'Eli-Baseball-7_oqo1jj',
+      'Eli-Baseball-8_gfv3a4',
+      'Eli-Baseball-9_mxzx9r',
+      'Eli-Baseball-10_scz1zi',
+      'Eli-Baseball-11_nkcwib',
+      'Eli-Baseball-12_chlxlr',
+      'Eli-Baseball-13_xp8fei',
+      'Eli-Baseball-14_ogjlrm',
+      'Eli-Baseball-15_yyvzc0',
+      'Eli-Baseball-16_qjsicc',
+      'Eli-Baseball-17_mee7ih',
+      'Eli-Baseball-18_nfghow',
+      'Eli-Baseball-19_lgc6qz',
+      'Eli-Baseball-20_doer3u',
+      'Eli-Baseball-21_vqcyqn',
+      'Eli-Baseball-22_a7c9ef',
+      'Eli-Baseball-23_uzlo0z',
+      'Eli-Baseball-24_okplpb',
+      'Eli-Baseball-25_tmhmkz',
+      'Eli-Baseball-26_hihwlj',
+      'Eli-Baseball-27_mfimwx',
+      'Eli-Baseball-28_v2eeqw',
+      'Eli-Baseball-29_uyerpd',
+      'Eli-Baseball-30_o54c2p',
+      'Eli-Baseball-31_emvzxt',
+      'Eli-Baseball-32_jko03t',
+    ]
+  },
 ];
 
 // ─── CATEGORY REGISTRY ────────────────────────────────────────────────────────
@@ -598,23 +665,23 @@ const LOCAL_ALBUMS = [
 // cover: public_id for the category card thumbnail.
 const LOCAL_CATEGORIES = [
   {
-    id:       'chilifest',
-    title:    'ChiliFest 2025',
-    tag:      'ChiliFest 2025',
-    cover:    'Koe-Wetzel-1_wll1st',
+    id:       'sports',
+    title:    'Sports',
+    tag:      'Sports',
+    cover:    'Douglass-Showcase-Selects-51_qlzhpp',
+    albumIds: ['douglass-showcase', 'swaic-kickoff', 'magnolia-baseball'],
+  },
+  {
+    id:       'live-events',
+    title:    'Live Events',
+    tag:      'Live Events',
+    cover:    'Koe-Wetzel-2_gz37h1',
     albumIds: ['koe-wetzel', 'josh-abbott', 'treaty-oak', 'people-of-chili'],
   },
   {
-    id:       'basketball',
-    title:    'EOP Basketball',
-    tag:      'EOP Basketball',
-    cover:    'Douglass-Showcase-Selects-1_qw0iyr',
-    albumIds: ['douglass-showcase', 'swaic-kickoff'],
-  },
-  {
-    id:       'grad-photos',
-    title:    'Grad Photos',
-    tag:      'Grad Photos',
+    id:       'portraits',
+    title:    'Portraits',
+    tag:      'Portraits',
     cover:    'Nathan-Grad-32_l9slbg',
     albumIds: ['nathan-grad', 'parker-grad', 'jennas-ring-dunk', 'group-grad-photos'],
   },
@@ -624,5 +691,12 @@ const LOCAL_CATEGORIES = [
     tag:      'Weddings',
     cover:    'ChatGPT_Image_Apr_29_2026_07_05_53_PM_v8z8k9',
     albumIds: ['karly-corey', 'madison-sam', 'ralynn-paul'],
+  },
+  {
+    id:       'restaurants',
+    title:    'Restaurants',
+    tag:      'Restaurants',
+    cover:    'Eden-Table-1_zssr55',
+    albumIds: ['eden-table'],
   },
 ];

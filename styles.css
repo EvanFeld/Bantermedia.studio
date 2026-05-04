@@ -1462,7 +1462,7 @@ footer {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 16px);
+  top: calc(100% + 2px);
   left: 50%;
   transform: translateX(-50%) translateY(6px);
   background: rgba(255,255,255,0.97);
@@ -1476,7 +1476,7 @@ footer {
   z-index: 200;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.22s ease;
+  transition: opacity 0.22s ease 0.4s, transform 0.22s ease 0.4s;
 }
 
 .nav-dropdown:hover .nav-dropdown-menu,
@@ -1484,6 +1484,7 @@ footer {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+  transition: opacity 0.18s ease 0s, transform 0.18s ease 0s;
 }
 
 .nav-dropdown-menu a {
