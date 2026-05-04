@@ -1456,3 +1456,75 @@ footer {
   .testimonials-grid { grid-template-columns: 1fr; }
   .team-photo { height: 280px; }
 }
+
+/* ─── NAV DROPDOWN ─── */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  list-style: none;
+  padding: 6px 0;
+  min-width: 195px;
+  box-shadow: 0 8px 32px rgba(13,30,53,0.1);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.22s, background 0.22s;
+  white-space: nowrap;
+}
+
+.nav-dropdown-menu a::after { display: none; }
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active {
+  color: var(--blue);
+  background: var(--blue-pale);
+}
+
+@media (max-width: 600px) {
+  .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-width: auto;
+    transition: none;
+  }
+  .nav-dropdown-menu li { border-bottom: none; }
+  .nav-dropdown-menu a { padding: 12px 0 12px 20px; font-size: 0.85rem; letter-spacing: 0.06em; }
+  .nav-dropdown-menu a:hover,
+  .nav-dropdown-menu a.active { background: none; }
+}
