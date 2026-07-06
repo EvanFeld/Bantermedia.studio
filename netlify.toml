@@ -16,32 +16,36 @@
   [headers.values]
     Content-Type = "application/xml"
 
-# ── Pretty-URL rewrites: serve moved /pages/*.html at clean root paths.
-#    status 200 = rewrite (browser URL stays pretty; query strings auto-preserved).
+# ── Retired shoot-type pages (facelift pivot, Phase 2A): 301 old niche URLs
+#    into the new positioning. /#content = the Content offer card on the homepage.
+#    Phase 2B will repoint these at the real offer pages.
 [[redirects]]
   from = "/services"
-  to   = "/pages/services.html"
-  status = 200
+  to   = "/#offers"
+  status = 301
 [[redirects]]
   from = "/sports"
-  to   = "/pages/sports.html"
-  status = 200
+  to   = "/#content"
+  status = 301
 [[redirects]]
   from = "/events"
-  to   = "/pages/events.html"
-  status = 200
+  to   = "/#content"
+  status = 301
 [[redirects]]
   from = "/restaurants"
-  to   = "/pages/restaurants.html"
-  status = 200
+  to   = "/#content"
+  status = 301
 [[redirects]]
   from = "/weddings"
-  to   = "/pages/weddings.html"
-  status = 200
+  to   = "/#content"
+  status = 301
 [[redirects]]
   from = "/portraits"
-  to   = "/pages/portraits.html"
-  status = 200
+  to   = "/#content"
+  status = 301
+
+# ── Pretty-URL rewrites: serve moved /pages/*.html at clean root paths.
+#    status 200 = rewrite (browser URL stays pretty; query strings auto-preserved).
 [[redirects]]
   from = "/work"
   to   = "/pages/work.html"
@@ -68,29 +72,30 @@
   status = 200
 
 # ── Legacy *.html URLs → clean URL (301). Query strings auto-carry.
+#    Retired niche pages point straight at their final destination (no chains).
 [[redirects]]
   from = "/services.html"
-  to   = "/services"
+  to   = "/#offers"
   status = 301
 [[redirects]]
   from = "/sports.html"
-  to   = "/sports"
+  to   = "/#content"
   status = 301
 [[redirects]]
   from = "/events.html"
-  to   = "/events"
+  to   = "/#content"
   status = 301
 [[redirects]]
   from = "/restaurants.html"
-  to   = "/restaurants"
+  to   = "/#content"
   status = 301
 [[redirects]]
   from = "/weddings.html"
-  to   = "/weddings"
+  to   = "/#content"
   status = 301
 [[redirects]]
   from = "/portraits.html"
-  to   = "/portraits"
+  to   = "/#content"
   status = 301
 [[redirects]]
   from = "/work.html"
