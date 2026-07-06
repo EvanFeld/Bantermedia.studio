@@ -15,3 +15,120 @@
   for = "/sitemap.xml"
   [headers.values]
     Content-Type = "application/xml"
+
+# ── Pretty-URL rewrites: serve moved /pages/*.html at clean root paths.
+#    status 200 = rewrite (browser URL stays pretty; query strings auto-preserved).
+[[redirects]]
+  from = "/services"
+  to   = "/pages/services.html"
+  status = 200
+[[redirects]]
+  from = "/sports"
+  to   = "/pages/sports.html"
+  status = 200
+[[redirects]]
+  from = "/events"
+  to   = "/pages/events.html"
+  status = 200
+[[redirects]]
+  from = "/restaurants"
+  to   = "/pages/restaurants.html"
+  status = 200
+[[redirects]]
+  from = "/weddings"
+  to   = "/pages/weddings.html"
+  status = 200
+[[redirects]]
+  from = "/portraits"
+  to   = "/pages/portraits.html"
+  status = 200
+[[redirects]]
+  from = "/work"
+  to   = "/pages/work.html"
+  status = 200
+[[redirects]]
+  from = "/meet-the-team"
+  to   = "/pages/meet-the-team.html"
+  status = 200
+[[redirects]]
+  from = "/testimonials"
+  to   = "/pages/testimonials.html"
+  status = 200
+[[redirects]]
+  from = "/faq"
+  to   = "/pages/faq.html"
+  status = 200
+[[redirects]]
+  from = "/interested"
+  to   = "/pages/interested.html"
+  status = 200
+[[redirects]]
+  from = "/album"
+  to   = "/pages/album.html"
+  status = 200
+
+# ── Legacy *.html URLs → clean URL (301). Query strings auto-carry.
+[[redirects]]
+  from = "/services.html"
+  to   = "/services"
+  status = 301
+[[redirects]]
+  from = "/sports.html"
+  to   = "/sports"
+  status = 301
+[[redirects]]
+  from = "/events.html"
+  to   = "/events"
+  status = 301
+[[redirects]]
+  from = "/restaurants.html"
+  to   = "/restaurants"
+  status = 301
+[[redirects]]
+  from = "/weddings.html"
+  to   = "/weddings"
+  status = 301
+[[redirects]]
+  from = "/portraits.html"
+  to   = "/portraits"
+  status = 301
+[[redirects]]
+  from = "/work.html"
+  to   = "/work"
+  status = 301
+[[redirects]]
+  from = "/meet-the-team.html"
+  to   = "/meet-the-team"
+  status = 301
+[[redirects]]
+  from = "/testimonials.html"
+  to   = "/testimonials"
+  status = 301
+[[redirects]]
+  from = "/faq.html"
+  to   = "/faq"
+  status = 301
+[[redirects]]
+  from = "/interested.html"
+  to   = "/interested"
+  status = 301
+
+# ── Renamed album page: old event URLs → /album. ?localAlbum= auto-carries.
+[[redirects]]
+  from = "/event"
+  to   = "/album"
+  status = 301
+[[redirects]]
+  from = "/event.html"
+  to   = "/album"
+  status = 301
+
+# ── Retired orphan (category.html deleted). Safety net for any stray links.
+[[redirects]]
+  from = "/category"
+  to   = "/work"
+  status = 301
+[[redirects]]
+  from = "/category.html"
+  to   = "/work"
+  status = 301

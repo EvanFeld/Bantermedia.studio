@@ -66,13 +66,12 @@ nav.scrolled {
 }
 
 .nav-logo-img {
-  height: 50px;
+  height: 42px;
   width: auto;
-  object-fit: contain;
+  object-fit: scale-down;
   flex-shrink: 0;
 }
 
-.nav-logo span { color: var(--blue); }
 
 .nav-links {
   display: flex;
@@ -175,7 +174,7 @@ nav.scrolled {
 }
 
 .hero-logo-mark {
-  width: clamp(80px, 14vw, 120px);
+  width: clamp(80px, 14vw, 135px);
   margin-bottom: 24px;
   pointer-events: none;
   opacity: 0;
@@ -247,7 +246,7 @@ nav.scrolled {
   white-space: nowrap;
 }
 
-.ticker-track {
+.ticker-wrap .ticker-track {
   display: inline-flex;
   animation: ticker 28s linear infinite;
 }
@@ -997,7 +996,6 @@ footer {
   flex-shrink: 0;
 }
 
-.footer-brand span { color: var(--blue); }
 
 .footer-tagline {
   font-size: 0.78rem;
@@ -1268,13 +1266,6 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* ─── DYNAMIC PAGES: GIG IMG PLACEHOLDER ─── */
-.gig-img-placeholder {
-  width: 100%;
-  min-height: 320px;
-  background: var(--bg);
-}
-
 /* ─── DYNAMIC PAGES: BACK LINK ─── */
 .back-link {
   display: inline-block;
@@ -1463,8 +1454,8 @@ footer {
 .nav-dropdown-menu {
   position: absolute;
   top: calc(100% + 2px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
+  left: 0;
+  transform: translateY(6px);
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(18px);
   border: 1px solid var(--border);
@@ -1508,24 +1499,83 @@ footer {
   background: var(--blue-pale);
 }
 
-@media (max-width: 600px) {
-  .nav-dropdown-menu,
-  .nav-dropdown:hover .nav-dropdown-menu,
-  .nav-dropdown:focus-within .nav-dropdown-menu {
+@media (max-width: 768px) {
+  .nav-dropdown-menu {
     position: static;
     transform: none;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
+    background: transparent;
     backdrop-filter: none;
     border: none;
     box-shadow: none;
-    padding: 0;
     min-width: auto;
-    transition: none;
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.25s ease;
+    /* force text to pre-paint before animation */
+    will-change: max-height;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
-  .nav-dropdown-menu li { border-bottom: none; }
-  .nav-dropdown-menu a { padding: 12px 0 12px 20px; font-size: 0.85rem; letter-spacing: 0.06em; }
-  .nav-dropdown-menu a:hover,
-  .nav-dropdown-menu a.active { background: none; }
+
+  /* defeat desktop :hover/:focus-within that applies translateX(-50%),
+     which shifts the static-positioned dropdown off-screen on mobile */
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+  }
+
+  .nav-dropdown.dropdown-open .nav-dropdown-menu {
+    max-height: 400px;
+    pointer-events: auto;
+    overflow: visible;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .nav-dropdown-menu li {
+    border-bottom: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    width: 100%;
+    padding: 13px 0 13px 28px;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-dropdown-menu a:active,
+  .nav-dropdown-menu a.active {
+    color: var(--blue);
+  }
+
+  .nav-dropdown-menu a::after {
+    display: none;
+  }
+
+  .nav-dropdown.dropdown-open > a svg {
+    transform: rotate(180deg);
+    transition: transform 0.2s ease;
+  }
 }
+
+/* ─── PHOTO TICKER ─── */
+.ticker-wrapper { overflow: hidden; width: 100%; }
+.ticker-wrapper .ticker-track { display: flex; gap: 16px; width: max-content; animation: ticker-scroll 45s linear infinite; will-change: transform; }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-wrapper .ticker-track img { height: 360px; width: 360px; object-fit: cover; border-radius: 4px; flex-shrink: 0; display: block; }
+.ticker-wrapper .ticker-track:hover { animation-play-state: paused; }

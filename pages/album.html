@@ -5,34 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Banter Media Group</title>
   <meta name="description" content="Photo gallery by Banter Media Group — sports, events, weddings, and more shot across College Station and Houston, TX." />
-  <meta property="og:image" content="https://bantermedia.studio/assets/og-image.jpg">
-  <meta property="og:url" content="https://bantermedia.studio/work">
-  <link rel="icon" href="assets/logo-icon.png" type="image/png">
-  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
+  <meta property="og:url" content="https://bantermedia.studio/album">
+  <link rel="canonical" href="https://bantermedia.studio/album">
+  <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="assets/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+    <a href="/" class="nav-logo">
+      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li class="nav-dropdown">
-        <a href="services.html">Services <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <a href="/services">Services <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
         <ul class="nav-dropdown-menu">
-          <li><a href="sports.html">Sports</a></li>
-          <li><a href="events.html">Live Events</a></li>
-          <li><a href="restaurants.html">Restaurants</a></li>
-          <li><a href="weddings.html">Weddings</a></li>
-          <li><a href="portraits.html">Portraits</a></li>
+          <li><a href="/sports">Sports</a></li>
+          <li><a href="/events">Live Events</a></li>
+          <li><a href="/restaurants">Restaurants</a></li>
+          <li><a href="/weddings">Weddings</a></li>
+          <li><a href="/portraits">Portraits</a></li>
         </ul>
       </li>
-      <li><a href="work.html">Collection</a></li>
-      <li><a href="meet-the-team.html">Team</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="interested.html">Interested</a></li>
+      <li><a href="/work">Collection</a></li>
+      <li><a href="/meet-the-team">Team</a></li>
+      <li><a href="/testimonials">Testimonials</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/interested">Interested</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -63,24 +64,24 @@
 
   <footer>
     <div>
-      <p class="footer-brand"><img src="assets/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
       <p class="footer-tagline">Banter Media Group &mdash; Capturing the Culture</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Collection</a></li>
-        <li><a href="meet-the-team.html">Team</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="interested.html">Interested</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work">Collection</a></li>
+        <li><a href="/meet-the-team">Team</a></li>
+        <li><a href="/testimonials">Testimonials</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/interested">Interested</a></li>
       </ul>
       <p class="footer-copy">&copy; 2026 Banter Media Group. All rights reserved.</p>
     </div>
   </footer>
 
-<script src="script.js"></script>
-  <script src="photos-data.js"></script>
+<script src="/js/script.js"></script>
+  <script src="/js/photos-data.js"></script>
   <script>
     function fmt(name) {
       return name.replace(/[-_]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
@@ -153,7 +154,7 @@
     const eventTag    = params.get('tag')   || '';
 
     const backLink = document.getElementById('back-link');
-    backLink.href        = 'work.html';
+    backLink.href        = '/work';
     backLink.textContent = '← All Work';
 
     // ── Local album mode (static data from photos-data.js) ───────────────────

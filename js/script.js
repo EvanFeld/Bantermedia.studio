@@ -50,14 +50,44 @@ if (hamburger) {
     hamburger.setAttribute('aria-expanded', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-  mobileLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileLinks.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  // Handle dropdown toggle (mobile only)
+const dropdownToggle = document.querySelector('.nav-dropdown > a');
+
+if (dropdownToggle) {
+  dropdownToggle.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const parentLi = dropdownToggle.parentElement;
+      parentLi.classList.toggle('dropdown-open');
+      // Force synchronous layout recalculation so text nodes paint
+      // before the max-height animation begins (iOS/Android compositing fix)
+      void parentLi.offsetHeight;
+    }
   });
+}
+
+// Handle all other links (close menu)
+mobileLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    // Ignore dropdown trigger
+    if (link.closest('.nav-dropdown') && link === dropdownToggle) return;
+    // Dropdown sub-links: delay nav collapse so the tap registers before
+    // layout shifts — prevents "slides away from finger" on slow devices
+    if (link.closest('.nav-dropdown-menu')) {
+      setTimeout(() => {
+        mobileLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }, 150);
+      return;
+    }
+    mobileLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
 }
 
 // Featured work carousel

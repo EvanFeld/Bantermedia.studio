@@ -22,6 +22,9 @@ function get(path) {
       let raw = '';
       res.on('data', c => raw += c);
       res.on('end', () => {
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          return reject(new Error(`Cloudinary ${res.statusCode} for ${path}: ${raw.slice(0, 200)}`));
+        }
         try { resolve(JSON.parse(raw)); }
         catch (e) { reject(e); }
       });
