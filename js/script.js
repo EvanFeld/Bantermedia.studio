@@ -100,6 +100,15 @@ if (featuredTrack) {
   nextBtn.addEventListener('click', () => featuredTrack.scrollBy({ left:  scrollAmount(), behavior: 'smooth' }));
 }
 
+// Before/after comparison slider (homepage hero)
+document.querySelectorAll('.ba-slider').forEach(slider => {
+  const range = slider.querySelector('.ba-range');
+  if (!range) return;
+  const update = () => slider.style.setProperty('--ba-pos', range.value + '%');
+  range.addEventListener('input', update);
+  update();
+});
+
 // Interest form
 const form = document.getElementById('interestForm');
 if (form) {
