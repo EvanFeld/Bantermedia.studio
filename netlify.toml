@@ -16,36 +16,51 @@
   [headers.values]
     Content-Type = "application/xml"
 
-# ── Retired shoot-type pages (facelift pivot, Phase 2A): 301 old niche URLs
-#    into the new positioning. /#content = the Content offer card on the homepage.
-#    Phase 2B will repoint these at the real offer pages.
+# ── Retired shoot-type pages (facelift pivot): 301 old niche URLs to the
+#    Content offer page. /services → the homepage offer ladder.
 [[redirects]]
   from = "/services"
   to   = "/#offers"
   status = 301
 [[redirects]]
   from = "/sports"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/events"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/restaurants"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/weddings"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/portraits"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 
 # ── Pretty-URL rewrites: serve moved /pages/*.html at clean root paths.
 #    status 200 = rewrite (browser URL stays pretty; query strings auto-preserved).
+[[redirects]]
+  from = "/websites"
+  to   = "/pages/websites.html"
+  status = 200
+[[redirects]]
+  from = "/branding-kits"
+  to   = "/pages/branding-kits.html"
+  status = 200
+[[redirects]]
+  from = "/launch-kits"
+  to   = "/pages/launch-kits.html"
+  status = 200
+[[redirects]]
+  from = "/content"
+  to   = "/pages/content.html"
+  status = 200
 [[redirects]]
   from = "/work"
   to   = "/pages/work.html"
@@ -79,23 +94,39 @@
   status = 301
 [[redirects]]
   from = "/sports.html"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/events.html"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/restaurants.html"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/weddings.html"
-  to   = "/#content"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/portraits.html"
-  to   = "/#content"
+  to   = "/content"
+  status = 301
+[[redirects]]
+  from = "/websites.html"
+  to   = "/websites"
+  status = 301
+[[redirects]]
+  from = "/branding-kits.html"
+  to   = "/branding-kits"
+  status = 301
+[[redirects]]
+  from = "/launch-kits.html"
+  to   = "/launch-kits"
+  status = 301
+[[redirects]]
+  from = "/content.html"
+  to   = "/content"
   status = 301
 [[redirects]]
   from = "/work.html"
