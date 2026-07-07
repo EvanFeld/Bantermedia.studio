@@ -65,6 +65,20 @@
   from = "/work"
   to   = "/pages/work.html"
   status = 200
+
+# ── Case-study pages (one dedicated page per example build).
+[[redirects]]
+  from = "/work/titan"
+  to   = "/pages/work-titan.html"
+  status = 200
+[[redirects]]
+  from = "/work/hissy-chick"
+  to   = "/pages/work-hissy-chick.html"
+  status = 200
+[[redirects]]
+  from = "/work/eot"
+  to   = "/pages/work-eot.html"
+  status = 200
 [[redirects]]
   from = "/meet-the-team"
   to   = "/pages/meet-the-team.html"
