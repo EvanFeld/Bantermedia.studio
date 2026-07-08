@@ -1,0 +1,591 @@
+/* ══════════════════════════════════════════════════════════════════
+   BANTER MEDIA GROUP — "AMBER BLUEPRINT" ACCENT LAYER
+   Source: Downloads/pricing template/banter-accent-kit (Claude Design)
+   Import AFTER css/styles.css. Amber is a SECONDARY accent (~10%) —
+   brand blue stays primary. Grid + glow live ONLY on navy surfaces.
+
+   REVERSIBILITY: everything themed is gated behind body.theme-blueprint
+   (and body.bp-paper for the pricing page's navy-paper treatment).
+   Remove the class + this stylesheet link and the site reverts fully.
+
+   CONTRAST RULES (hard, from the kit):
+   · amber text ONLY on navy (7.5:1)  · every amber fill carries navy text
+   · amber-deep on white: LARGE display text only (≥24px)
+   · never amber body copy / links / icons on light surfaces
+   ══════════════════════════════════════════════════════════════════ */
+
+:root{
+  /* aliases so kit snippets work against the site's token names */
+  --bmg-navy:      var(--navy, #0d1e35);
+  --bmg-blue:      var(--blue, #2b6cb0);
+  --bmg-blue-mid:  var(--blue-mid, #4a90d9);
+
+  /* ── Amber ramp ── */
+  --bmg-amber:       #E0A23C;                 /* primary warm accent */
+  --bmg-amber-deep:  #C5832A;                 /* hover/pressed · large display on light */
+  --bmg-amber-soft:  rgba(224,162,60,0.14);   /* tint fills, chips */
+  --bmg-amber-glow:  rgba(224,162,60,0.28);   /* radial glow */
+
+  /* ── Blueprint grid ── */
+  --bmg-grid-line:   rgba(255,255,255,0.045);
+  --bmg-grid-size:   26px;
+}
+
+/* ── Kit utilities (gated: nothing renders without body.theme-blueprint) ── */
+.theme-blueprint .bp-grid{position:relative;}
+.theme-blueprint .bp-grid::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  /* the fade is the whole trick — never ship a hard full-bleed grid */
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 22%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 22%, #000 38%, transparent 80%);
+}
+.theme-blueprint .bp-grid > *{position:relative;z-index:1;}
+
+/* variant: mask sits LOW so the grid fades IN from the top edge — put it
+   on the section AFTER a normal .bp-grid and the two fades hand off
+   across the seam (offers fades out → proof fades back in) */
+.theme-blueprint .bp-grid--rise::before{
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 78%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 78%, #000 38%, transparent 80%);
+}
+
+.theme-blueprint .bp-glow{
+  position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle, var(--bmg-amber-glow), transparent 64%);
+  pointer-events:none;z-index:0;
+}
+
+.theme-blueprint .btn-amber{
+  background:var(--bmg-amber);
+  color:var(--bmg-navy);                       /* navy on amber = 7.5:1 AA */
+  transition:background .25s ease, transform .25s ease;
+}
+.theme-blueprint .btn-amber:hover{background:var(--bmg-amber-deep);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(224,162,60,0.28);}
+
+.theme-blueprint .accent-amber{color:var(--bmg-amber);}          /* ON NAVY ONLY */
+.theme-blueprint .accent-amber--ink{color:var(--bmg-amber-deep);}/* on light: LARGE display ≥24px ONLY — never body copy */
+
+.theme-blueprint .rule-amber{height:3px;width:46px;background:var(--bmg-amber);border-radius:2px;}
+
+.theme-blueprint .tick-amber::before{
+  content:"";display:inline-block;width:12px;height:3px;border-radius:2px;
+  background:var(--bmg-amber);margin-right:.6em;vertical-align:middle;
+}
+
+/* ⚠ dark surfaces only — amber-deep on a light amber-soft chip fails contrast */
+.theme-blueprint .chip-amber{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--bmg-amber-soft);color:var(--bmg-amber-deep);border-radius:3px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   THEME LAYER — body.theme-blueprint (site-wide, navy surfaces only)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* CTA banner (navy band on every page): grid + corner glow, CSS-only */
+.theme-blueprint .cta-banner{position:relative;overflow:hidden;}
+.theme-blueprint .cta-banner::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 22%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 22%, #000 38%, transparent 80%);
+}
+.theme-blueprint .cta-banner::after{
+  content:"";position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;
+  top:-190px;right:-150px;pointer-events:none;
+  background:radial-gradient(circle, var(--bmg-amber-glow), transparent 64%);
+}
+.theme-blueprint .cta-banner > *{position:relative;z-index:1;}
+
+/* AUDIT CTAs WEAR THE GOLD (owner call 2026-07-08 — supersedes kit
+   rule 4's one-amber-CTA-per-view): every primary that drives to
+   /interested (heroes, headers, banners, nav chip) plus the audit
+   form's submit is amber w/ navy text. Case-study "visit the live
+   site" primaries are the only blue ones left. */
+.theme-blueprint .cta-banner .btn-primary,
+.theme-blueprint .btn-primary[href="/interested"],
+.theme-blueprint .interest-form button.btn-primary{
+  background:var(--bmg-amber);color:var(--bmg-navy);
+}
+.theme-blueprint .cta-banner .btn-primary:hover,
+.theme-blueprint .btn-primary[href="/interested"]:hover,
+.theme-blueprint .interest-form button.btn-primary:hover{
+  background:var(--bmg-amber-deep);color:var(--bmg-navy);
+  box-shadow:0 8px 24px rgba(224,162,60,0.28);
+}
+
+/* banner eyebrow: amber on navy (overrides the inline blue-mid) */
+.theme-blueprint .cta-banner .section-label{color:var(--bmg-amber) !important;}
+
+/* Flagship band (home + pricing): grid overlay + warm the existing glow */
+.theme-blueprint .flagship::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  -webkit-mask-image:radial-gradient(130% 120% at 30% 20%, #000 35%, transparent 82%);
+          mask-image:radial-gradient(130% 120% at 30% 20%, #000 35%, transparent 82%);
+}
+.theme-blueprint .flagship::before{
+  background:radial-gradient(ellipse 60% 110% at 88% 0%, var(--bmg-amber-glow) 0%, transparent 60%);
+}
+.theme-blueprint .flagship-chip{color:var(--bmg-amber);border-color:rgba(224,162,60,0.5);}
+.theme-blueprint .flagship-save{color:var(--bmg-amber);}
+/* keep flagship copy/actions above the decorative grid layer */
+.theme-blueprint .flagship > *{position:relative;z-index:1;}
+.theme-blueprint .flagship::after{z-index:0;}
+
+/* ══════════════════════════════════════════════════════════════════
+   NAVY PAPER — body.bp-paper (pricing page): navy is the sheet,
+   white surfaces come up as the cards.
+   ══════════════════════════════════════════════════════════════════ */
+
+body.bp-paper{background:var(--navy);}
+
+/* header becomes the blueprint title block */
+.bp-paper .pricing-header{background:var(--navy);}
+.bp-paper .pricing-header::before{
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+}
+.bp-paper .pricing-header::after{
+  content:"";position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;
+  top:-190px;right:-150px;pointer-events:none;
+  background:radial-gradient(circle, var(--bmg-amber-glow), transparent 64%);
+}
+.bp-paper .pricing-header h1{color:var(--white);}
+.bp-paper .pricing-header h1 .bl{color:var(--bmg-amber);}
+.bp-paper .pricing-header .section-label{color:var(--bmg-amber);}
+.bp-paper .pricing-note{color:rgba(255,255,255,0.62);}
+.bp-paper .pricing-header .rule-amber{margin:22px auto 0;}
+
+/* sections sit on the navy sheet; alt bands get a faint lift that
+   DISSOLVES at both edges (same seamless-scroll rule as the site lifts) */
+.bp-paper .price-sec{background:transparent;}
+.bp-paper .price-sec--alt{
+  background:linear-gradient(180deg,
+    rgba(255,255,255,0) 0%,     rgba(255,255,255,0.035) 14%,
+    rgba(255,255,255,0.035) 86%, rgba(255,255,255,0) 100%);
+}
+
+.bp-paper .price-sec-head .k{color:var(--bmg-amber);}
+.bp-paper .price-sec-head .k::before{
+  content:"";display:inline-block;width:12px;height:3px;border-radius:2px;
+  background:var(--bmg-amber);margin-right:.6em;vertical-align:middle;
+}
+.bp-paper .price-sec-head h2{color:var(--white);}
+.bp-paper .price-sec-head p{color:rgba(255,255,255,0.58);}
+
+/* white cards on navy paper — "white still comes up, just not the main color" */
+.bp-paper .pkg-card,
+.bp-paper .spec-card,
+.bp-paper .addon-card{border-color:rgba(255,255,255,0.14);}
+.bp-paper .pkg-card:hover,
+.bp-paper .addon-card:hover{border-color:var(--bmg-amber);
+  box-shadow:0 14px 36px rgba(0,0,0,0.35);}
+
+/* the Most Popular card wears the gold */
+.bp-paper .pkg-card--pop{border-color:var(--bmg-amber);
+  box-shadow:0 10px 34px rgba(224,162,60,0.22);}
+.bp-paper .pkg-flag{background:var(--bmg-amber);color:var(--bmg-navy);}
+/* pop-card price stays blue: amber-deep on white sits at the bare 3:1
+   floor — the flag + border + shadow already carry the gold */
+
+/* specialty cards: amber spine */
+.bp-paper .spec-card{border-left:3px solid var(--bmg-amber);}
+
+/* maintenance band: gold wash on navy */
+.bp-paper .maint-band{
+  background:var(--bmg-amber-soft);
+  border-color:rgba(224,162,60,0.35);
+}
+.bp-paper .maint-band .mk{color:var(--bmg-amber);}
+.bp-paper .maint-band .mv{color:var(--white);}
+.bp-paper .maint-plans{color:rgba(255,255,255,0.85);}
+.bp-paper .maint-plans b{color:var(--bmg-amber);}
+
+/* process steps on navy */
+.bp-paper .pstep .n{color:var(--bmg-amber);}
+.bp-paper .pstep .t{color:var(--white);}
+.bp-paper .pstep .d{color:rgba(255,255,255,0.58);}
+
+/* Flagship = WHITE plate on the navy sheet (owner call 2026-07-08):
+   no grid, no glow — the grid belongs to the section behind it. */
+.bp-paper .flagship{background:var(--white);border:1px solid var(--border);}
+.bp-paper .flagship::before,
+.bp-paper .flagship::after{display:none;}
+.bp-paper .flagship-title{color:var(--navy);}
+.bp-paper .flagship-sub{color:var(--gray);}
+.bp-paper .flagship-micro{color:var(--gray);}
+/* amber fill carries navy text (kit contrast rule) */
+.bp-paper .flagship-chip{background:var(--bmg-amber);color:var(--bmg-navy);border-color:transparent;}
+.bp-paper .flagship-save{color:var(--bmg-amber-deep);}
+
+/* ══════════════════════════════════════════════════════════════════
+   SITE-WIDE NAVY PAPER — body.bp-paper on EVERY page (owner call,
+   2026-07-07): navy + grid is the main look, white is secondary
+   (cards/inputs/media), amber stays the ~10% accent. Grid + glow
+   appear only at "moments": heroes / page headers / CTA bands.
+   RULE OF THE INVERSION: text sitting directly on navy flips light;
+   text inside white cards NEVER changes.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── Nav: dark blueprint chrome, white logo + wordmark ── */
+.bp-paper nav{
+  background:rgba(13,30,53,0.92);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.bp-paper nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,0.4);}
+.bp-paper .nav-logo{color:var(--white);}
+.nav-wordmark{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.45rem;letter-spacing:0.14em;line-height:1;
+}
+.bp-paper .nav-links a{color:rgba(255,255,255,0.72);}
+.bp-paper .nav-links a:hover,
+.bp-paper .nav-links a.active{color:var(--white);}
+/* nav Free Audit chip joins the gold (audit-CTA rule above) */
+.bp-paper .nav-links a.nav-cta{background:var(--bmg-amber);color:var(--bmg-navy);}
+.bp-paper .nav-links a.nav-cta:hover{background:var(--bmg-amber-deep);color:var(--bmg-navy);}
+.bp-paper .nav-hamburger span{background:var(--white);}
+.bp-paper .nav-dropdown-menu{
+  background:rgba(13,30,53,0.97);
+  border-color:rgba(255,255,255,0.1);
+  box-shadow:0 8px 32px rgba(0,0,0,0.45);
+}
+.bp-paper .nav-dropdown-menu a{color:rgba(255,255,255,0.65);}
+.bp-paper .nav-dropdown-menu a:hover,
+.bp-paper .nav-dropdown-menu a.active{
+  color:var(--white);background:rgba(74,144,217,0.14);
+}
+@media (max-width:600px){
+  .bp-paper .nav-links{
+    background:rgba(13,30,53,0.97);
+    border-bottom:2px solid rgba(255,255,255,0.1);
+    box-shadow:0 8px 32px rgba(0,0,0,0.5);
+  }
+  .bp-paper .nav-links li{border-bottom-color:rgba(255,255,255,0.08);}
+}
+
+/* ── Hero moments (home + offer split heroes): grid + glow on navy ── */
+.bp-paper .hero{background:var(--navy);}
+.bp-paper .hero::before{
+  background:none;
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+}
+.bp-paper .hero::after{
+  content:"";position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;
+  top:-190px;right:-150px;pointer-events:none;
+  background:radial-gradient(circle, var(--bmg-amber-glow), transparent 64%);
+}
+.bp-paper .hero > *{position:relative;z-index:1;}
+.bp-paper .hero-title{color:var(--white);}
+.bp-paper .hero-title .line-blue{color:var(--bmg-amber);}
+.bp-paper .hero-eyebrow{color:var(--bmg-amber);}
+.bp-paper .hero-sub{color:rgba(255,255,255,0.65);}
+.bp-paper .hero-micro{color:rgba(255,255,255,0.45);}
+
+/* ── Page-header + case-study-header moments ── */
+.bp-paper .page-header,
+.bp-paper .cs-header{
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.bp-paper .page-header::after,
+.bp-paper .cs-header::after{
+  background:none;
+  background-image:
+    linear-gradient(var(--bmg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bmg-grid-line) 1px, transparent 1px);
+  background-size:var(--bmg-grid-size) var(--bmg-grid-size);
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 20%, #000 38%, transparent 80%);
+}
+/* modifier: header grid fades IN toward the bottom edge instead, so it
+   hands off seamlessly into a .bp-grid section directly below
+   (branding-kits header → what-you-get; /work header → case studies) */
+.bp-paper .page-header--grid-rise::after{
+  -webkit-mask-image:radial-gradient(120% 90% at 50% 78%, #000 38%, transparent 80%);
+          mask-image:radial-gradient(120% 90% at 50% 78%, #000 38%, transparent 80%);
+}
+.bp-paper .page-header::before,
+.bp-paper .cs-header::before{
+  content:"";position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;
+  top:-190px;right:-150px;pointer-events:none;z-index:0;
+  background:radial-gradient(circle, var(--bmg-amber-glow), transparent 64%);
+}
+.bp-paper .page-header > *,
+.bp-paper .cs-header > *{position:relative;z-index:1;}
+
+/* ── Generic direct-on-navy text flips ── */
+.bp-paper .section-title{color:var(--white);}
+.bp-paper .section-sub{color:rgba(255,255,255,0.6);}
+.bp-paper .section-label{color:var(--bmg-amber);}
+.bp-paper .section-label::before{
+  content:"";display:inline-block;width:12px;height:3px;border-radius:2px;
+  background:var(--bmg-amber);margin-right:.6em;vertical-align:middle;
+}
+/* the CTA banner already carries its own amber label — avoid double ticks */
+.bp-paper .cta-banner .section-label::before{display:none;}
+/* inline-styled gray paragraphs that sat on light sections */
+.bp-paper p[style*="color:var(--gray)"]{color:rgba(255,255,255,0.6) !important;}
+/* …but light callout panels (inline blue-pale/white bg) STAY light —
+   restore their dark text and use amber-deep for labels (kit: on light,
+   labels are navy or amber-deep, never amber) */
+.bp-paper [style*="--blue-pale"] p[style*="color:var(--gray)"],
+.bp-paper [style*="background:var(--white)"][style*="border-radius"] p[style*="color:var(--gray)"]{
+  color:var(--gray) !important;
+}
+.bp-paper [style*="--blue-pale"] .section-label{color:var(--bmg-amber-deep);}
+
+/* ── Section surfaces: navy sheet + alternating lifts ──
+   Lifts DISSOLVE into the sheet at both edges (owner call 2026-07-08)
+   so navy-on-navy seams disappear while scrolling; hard edges belong
+   to white bands only. (#team + #mockups left this list — .bp-white) */
+.bp-paper #services,.bp-paper #offers{
+  background:linear-gradient(180deg,
+    rgba(255,255,255,0) 0%,     rgba(255,255,255,0.035) 14%,
+    rgba(255,255,255,0.035) 86%, rgba(255,255,255,0) 100%);
+}
+.bp-paper #gigs,.bp-paper #proof{background:transparent;}
+.bp-paper .about-split{background:transparent;}
+.bp-paper section[style*="var(--white)"]{background:transparent !important;}
+.bp-paper section[style*="var(--bg)"]{
+  background:linear-gradient(180deg,
+    rgba(255,255,255,0) 0%,     rgba(255,255,255,0.035) 14%,
+    rgba(255,255,255,0.035) 86%, rgba(255,255,255,0) 100%) !important;
+}
+
+/* ── White cards pop on the sheet (internals untouched) ── */
+.bp-paper .offer-card,.bp-paper .include-item,.bp-paper .step-card,
+.bp-paper .testi-card,.bp-paper .team-card,.bp-paper .mockup-card,
+.bp-paper .proof-card,.bp-paper .tier-card,.bp-paper .spec-card,
+.bp-paper .gig-card,.bp-paper .carousel-card,.bp-paper .ad-card,
+.bp-paper .swatch,.bp-paper .cover-card{border-color:rgba(255,255,255,0.14);}
+.bp-paper .tier-card--flag{border-color:rgba(255,255,255,0.38);}
+
+/* ── Buttons on navy ── */
+.bp-paper .btn-outline{color:var(--white);border-color:rgba(255,255,255,0.3);}
+.bp-paper .btn-outline:hover{border-color:var(--bmg-blue-mid);color:var(--bmg-blue-mid);}
+
+/* ── Offer-page header bits ── */
+.bp-paper .offer-micro{color:rgba(255,255,255,0.45);}
+.bp-paper .price-hook{color:rgba(255,255,255,0.6);}
+.bp-paper .price-hook b{color:var(--bmg-amber);}
+.bp-paper .price-hook a{color:var(--bmg-blue-mid);}
+
+/* ── Proof strip ── */
+.bp-paper .proof-strip{
+  background:rgba(255,255,255,0.035);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.bp-paper .ps-client{color:rgba(255,255,255,0.85);}
+
+/* ── Ticker + positioning: inverted WHITE bands (owner call 2026-07-08).
+   Ink is navy; accents follow the kit's on-light rule — amber-deep,
+   large/display only. ── */
+.bp-paper .ticker-wrap{
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+}
+.bp-paper .ticker-item{color:rgba(13,30,53,0.72);}
+.bp-paper .ticker-item.highlight{color:var(--bmg-amber-deep);}
+.bp-paper .positioning{background:var(--white);}
+.bp-paper .positioning-title{color:var(--navy);}
+.bp-paper .positioning-title span{color:var(--bmg-amber-deep);}
+.bp-paper .positioning-sub{color:var(--gray);}
+
+/* ── WHITE BANDS — .bp-white (owner call 2026-07-08): showcase sections
+   flip to a white sheet so the work stands out, and framed media
+   (mockups, ads) inverts to NAVY plates with light captions.
+   Contract addition: text directly on a white band is ink again; white
+   cards on a white band keep their base hairline borders.
+   Applied: home #mockups · offer-page proof showcases · testimonials
+   wall · team page · work library teaser. ── */
+.bp-paper .bp-white{background:var(--white) !important;}
+
+/* direct-on-white text: back to ink (counters the navy-sheet flips) */
+.bp-paper .bp-white .section-title{color:var(--navy);}
+.bp-paper .bp-white .section-sub{color:var(--gray);}
+.bp-paper .bp-white .section-sub a{color:var(--blue);}
+/* on light, labels run amber-deep (kit: never bright amber on white) */
+.bp-paper .bp-white .section-label{color:var(--bmg-amber-deep);}
+.bp-paper .bp-white .section-label::before{background:var(--bmg-amber-deep);}
+/* display-size accent words: amber-deep is cleared for large text only */
+.bp-paper .bp-white .section-title span[style*="color:var(--blue)"]{color:var(--bmg-amber-deep) !important;}
+.bp-paper .bp-white p[style*="color:var(--gray)"]{color:var(--gray) !important;}
+.bp-paper .bp-white p[style*="color:var(--gray)"] a,
+.bp-paper .bp-white .mockup-note a{color:var(--blue) !important;}
+.bp-paper .bp-white .ad-group-head h3{color:var(--navy);}
+.bp-paper .bp-white .ad-group-sub{color:var(--gray);}
+.bp-paper .bp-white .back-link{color:var(--blue);}
+.bp-paper .bp-white .btn-outline{color:var(--navy);border-color:var(--border);}
+.bp-paper .bp-white .btn-outline:hover{color:var(--blue);border-color:var(--blue);}
+
+/* white cards inside a white band: base hairlines again (the navy-sheet
+   layer painted these borders white-dim, invisible here) */
+.bp-paper .bp-white .include-item,.bp-paper .bp-white .step-card,
+.bp-paper .bp-white .testi-card,.bp-paper .bp-white .team-card,
+.bp-paper .bp-white .proof-card,
+.bp-paper .bp-white .carousel-card,.bp-paper .bp-white .swatch{border-color:var(--border);}
+
+/* framed media inverts: navy plates, light captions */
+.bp-paper .bp-white .mockup-card,
+.bp-paper .bp-white .cover-card,
+.bp-paper .bp-white .ad-card{background:var(--navy);border-color:var(--navy);}
+
+/* five-up mockup row (branded-material adds the truck) */
+.mockup-grid--5{grid-template-columns:repeat(5,1fr);}
+@media (max-width:900px){.mockup-grid--5{grid-template-columns:repeat(2,1fr);}}
+.bp-paper .bp-white .mockup-card figcaption{color:var(--white);border-top-color:rgba(255,255,255,0.16);}
+.bp-paper .bp-white .ad-card:hover{border-color:var(--blue);}
+.bp-paper .bp-white .ad-meta{border-top-color:rgba(255,255,255,0.16);}
+.bp-paper .bp-white .ad-chip{
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.18);
+  color:rgba(255,255,255,0.78);
+}
+
+/* ── Pricing sections on the white sheet (owner call 2026-07-08) ──
+   Section heads flip to ink w/ amber-deep kickers; the add-on cards
+   ("The Matching Look") invert to NAVY plates where the gold price is
+   the pop; process steps flip to ink w/ amber-deep numerals. */
+.bp-paper .bp-white .price-sec-head .k{color:var(--bmg-amber-deep);}
+.bp-paper .bp-white .price-sec-head .k::before{background:var(--bmg-amber-deep);}
+.bp-paper .bp-white .price-sec-head h2{color:var(--navy);}
+.bp-paper .bp-white .price-sec-head p{color:var(--gray);}
+.bp-paper .bp-white .addon-card{background:var(--navy);border-color:var(--navy);}
+.bp-paper .bp-white .addon-card:hover{border-color:var(--bmg-amber);
+  box-shadow:0 14px 36px rgba(13,30,53,0.25);}
+.bp-paper .bp-white .addon-name{color:var(--white);}
+.bp-paper .bp-white .addon-price{color:var(--bmg-amber);}   /* the gold pop */
+.bp-paper .bp-white .addon-desc{color:rgba(255,255,255,0.65);}
+.bp-paper .bp-white .addon-link{color:var(--bmg-blue-mid);}
+.bp-paper .bp-white .pstep .n{color:var(--bmg-amber-deep);}
+.bp-paper .bp-white .pstep .t{color:var(--navy);}
+.bp-paper .bp-white .pstep .d{color:var(--gray);}
+
+/* ── Websites proof-strip as a white band: ink names at full strength,
+   amber-deep kicker + dots (the black/yellow pop on white) ── */
+.bp-paper .proof-strip.bp-white{border-bottom:1px solid var(--border);}
+.bp-paper .proof-strip.bp-white .ps-label{color:var(--bmg-amber-deep);}
+.bp-paper .proof-strip.bp-white .ps-client{color:var(--navy);opacity:1;}
+.bp-paper .proof-strip.bp-white .ps-dot{background:var(--bmg-amber-deep);}
+
+/* hairline seam when a white band runs into the white positioning band */
+.bp-paper .bp-white ~ .positioning{border-top:1px solid var(--border);}
+
+/* ── FAQ rows (direct on navy) ── */
+.bp-paper .faq-item{border-bottom-color:rgba(255,255,255,0.12);}
+.bp-paper .faq-question h3{color:var(--white);}
+.bp-paper .faq-item.open .faq-question h3{color:var(--bmg-blue-mid);}
+.bp-paper .faq-icon{border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.6);}
+.bp-paper .faq-answer p{color:rgba(255,255,255,0.6);}
+
+/* ── Interested page: left column + form labels (inputs stay white) ── */
+.bp-paper .contact-text{color:rgba(255,255,255,0.65);}
+.bp-paper .contact-text strong{color:rgba(255,255,255,0.45);}
+.bp-paper .contact-text a:hover{color:var(--bmg-blue-mid);}
+.bp-paper .form-group label{color:rgba(255,255,255,0.7);}
+
+/* ── Case-study interiors (direct-on-navy pieces only) ── */
+.bp-paper .cs-title{color:var(--white);}
+.bp-paper .cs-lede{color:rgba(255,255,255,0.65);}
+.bp-paper .cs-meta-item strong{color:var(--white);}
+.bp-paper .cs-logo-chip span{color:var(--white) !important;}
+.bp-paper .back-link{color:var(--bmg-blue-mid);}
+.bp-paper .cs-brief-col h3{color:var(--white);}
+.bp-paper .cs-brief-col p{color:rgba(255,255,255,0.6);}
+/* per-client accent eyebrows: keep the hue, lift it off the navy */
+.bp-paper .cs-eyebrow,
+.bp-paper .spec-eyebrow{color:color-mix(in srgb, var(--cs-accent), white 45%);}
+.bp-paper .ad-group-head h3{color:var(--white);}
+.bp-paper .ad-group-sub{color:rgba(255,255,255,0.6);}
+.bp-paper .deliverables li{color:rgba(255,255,255,0.85);}
+.bp-paper .deliverables li small{color:rgba(255,255,255,0.5);}
+.bp-paper .cs-metrics{background:rgba(255,255,255,0.1);}
+.bp-paper .baf-name{color:var(--white);}
+.bp-paper .baf-tag{color:rgba(255,255,255,0.55);}
+.bp-paper .cs-pager{border-top-color:rgba(255,255,255,0.12);}
+.bp-paper .cs-pager a{color:rgba(255,255,255,0.6);}
+.bp-paper .cs-pager a:hover{color:var(--bmg-blue-mid);}
+
+/* ── Library / album ── */
+.bp-paper .work-filter-bar{
+  background:rgba(13,30,53,0.92) !important;
+  border-color:rgba(255,255,255,0.1) !important;
+}
+.bp-paper .photo-item,
+.bp-paper .photo-item img{background:rgba(255,255,255,0.05);}
+.bp-paper .empty-state{color:rgba(255,255,255,0.6);}
+.bp-paper .spinner{border-color:rgba(255,255,255,0.2);border-top-color:var(--bmg-blue-mid);}
+
+/* ── Stats band (if used) ── */
+.bp-paper #stats{background:rgba(255,255,255,0.1);}
+
+/* ── Audit-pass rescues (2026-07-07 static audit, 23 findings) ── */
+/* H1/H2 accent words with inline blue: follow the hero convention → amber */
+.bp-paper .section-title span[style*="color:var(--blue)"]{color:var(--bmg-amber) !important;}
+/* inline-blue links inside rescued gray paragraphs + mockup notes → blue-mid */
+.bp-paper p[style*="color:var(--gray)"] a{color:var(--bmg-blue-mid) !important;}
+.bp-paper .mockup-note a{color:var(--bmg-blue-mid) !important;}
+/* calm-screenshot caption links (base styles use --blue, too dark on navy) */
+.bp-paper .cs-shot-caption a{color:var(--bmg-blue-mid);}
+/* FAQ answer links carry inline blue */
+.bp-paper .faq-answer a{color:var(--bmg-blue-mid) !important;}
+/* unstyled/browser-default links in header subs (testimonials → case studies) */
+.bp-paper .section-sub a{color:var(--bmg-blue-mid);}
+/* inline case-study-accent text (EOT brick red is ~2.8:1 on navy) — lift the hue */
+.bp-paper [style*="color:var(--cs-accent)"]{
+  color:color-mix(in srgb, var(--cs-accent), white 45%) !important;
+}
+/* deliverables checkmarks use --cs-accent borders — lift those too */
+.bp-paper .deliverables li::before{
+  border-color:color-mix(in srgb, var(--cs-accent), white 45%);
+}
+/* Titan's navy .tag-premium chip vanishes on the navy header → gold flagship chip */
+.bp-paper .tag-premium{
+  background:var(--bmg-amber-soft);
+  border-color:rgba(224,162,60,0.5);
+  color:var(--bmg-amber);
+}
+/* featured-testimonial stars inherit navy body color on the navy card → amber */
+.bp-paper .testi-featured .testi-stars{color:var(--bmg-amber);}
+/* library filter tabs: page-local rules color active/hover navy-on-navy */
+.bp-paper .filter-btn:hover,
+.bp-paper .filter-btn.active{color:var(--white);}
+
+/* ── Footer: navy chrome, white brand ── */
+.bp-paper footer{
+  background:var(--navy);
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.bp-paper .footer-brand{color:var(--white);}
+.bp-paper .footer-links a:hover{color:var(--bmg-blue-mid);}
+.bp-paper .footer-copy{color:rgba(255,255,255,0.25);}
+
+/* ── decorative layers are static; dim them for print ── */
+@media print{
+  .bp-grid::before,.bp-glow,
+  .theme-blueprint .cta-banner::before,.theme-blueprint .cta-banner::after,
+  .theme-blueprint .flagship::after,
+  .bp-paper .pricing-header::before,.bp-paper .pricing-header::after{opacity:.4;}
+}

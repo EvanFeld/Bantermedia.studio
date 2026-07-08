@@ -62,6 +62,14 @@
   to   = "/pages/content.html"
   status = 200
 [[redirects]]
+  from = "/pricing"
+  to   = "/pages/pricing.html"
+  status = 200
+[[redirects]]
+  from = "/library"
+  to   = "/pages/library.html"
+  status = 200
+[[redirects]]
   from = "/work"
   to   = "/pages/work.html"
   status = 200
@@ -78,6 +86,16 @@
 [[redirects]]
   from = "/work/eot"
   to   = "/pages/work-eot.html"
+  status = 200
+
+# ── Portfolio section pages (nav: Portfolio → Ads / Branded Material).
+[[redirects]]
+  from = "/work/ads"
+  to   = "/pages/work-ads.html"
+  status = 200
+[[redirects]]
+  from = "/work/branded-material"
+  to   = "/pages/work-branded-material.html"
   status = 200
 [[redirects]]
   from = "/meet-the-team"
@@ -141,6 +159,10 @@
 [[redirects]]
   from = "/content.html"
   to   = "/content"
+  status = 301
+[[redirects]]
+  from = "/pricing.html"
+  to   = "/pricing"
   status = 301
 [[redirects]]
   from = "/work.html"

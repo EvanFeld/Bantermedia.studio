@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1e35" />
   <title>Hissy Chick Kitchen — Food-Truck Website Redesign | Banter Media Work</title>
   <meta name="description" content="A live website redesign and full brand system for Hissy Chick Kitchen — a Nashville-style chicken food truck and storefront in Magnolia, TX. See the Banter Media case study: new site, design system, and a 6-piece social ad set." />
   <link rel="canonical" href="https://bantermedia.studio/work/hissy-chick" />
@@ -19,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;0,9..40,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,12 +32,12 @@
   }
   </script>
 </head>
-<body class="cs-page" style="--cs-accent:#00BFC8;">
+<body class="theme-blueprint bp-paper cs-page" style="--cs-accent:#00BFC8;">
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -48,7 +50,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work" class="active">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work" class="active">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work" class="active">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -94,7 +104,7 @@
   </header>
 
   <!-- THE BRIEF -->
-  <section style="background:var(--white);">
+  <section class="bp-grid" style="background:var(--white);">
     <div class="cs-block-head reveal">
       <p class="section-label">The Brief</p>
       <h2 class="section-title">A LOUD BRAND, A QUIET SITE</h2>
@@ -125,9 +135,10 @@
       <h2 class="section-title">LIVE, LOUD, AND SELLING</h2>
       <p class="section-sub" style="max-width:600px;">The real site at hissychick.net &mdash; every screen built to do one thing: get you a sandwich. Menu up front, online ordering one tap away, and the brand voice on every line.</p>
     </div>
-    <div class="reveal" style="position:relative;max-width:1000px;margin:0 auto;">
-      <img src="/assets/showcase/hissy-after.jpg" alt="The live Hissy Chick Kitchen homepage" style="width:100%;display:block;border-radius:8px;border:1px solid var(--border);box-shadow:0 22px 60px rgba(13,30,53,0.16);">
+    <div class="cs-shot reveal">
+      <img class="shot-main" src="/assets/showcase/hissy-after.jpg" alt="The live Hissy Chick Kitchen homepage">
     </div>
+    <p class="cs-shot-caption">Live today at <a href="https://hissychick.net/" target="_blank" rel="noopener noreferrer">hissychick.net &rarr;</a></p>
   </section>
 
   <!-- THE ASSET PACKAGE / DESIGN SYSTEM -->
@@ -310,7 +321,7 @@
     <div class="cta-logo-clip">
       <img src="/assets/logos/logo-white.png" alt="" class="cta-logo-accent">
     </div>
-    <p class="section-label" style="color:var(--blue-mid);">The Free Facelift Audit</p>
+    <p class="section-label" style="color:var(--blue-mid);">The Free Website Audit</p>
     <h2 class="section-title" style="color:var(--white); margin-bottom:14px;">WANT THIS FOR<br>YOUR BUSINESS?</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5); margin:0 auto 36px;">We'll tear down your current site and mock up your brand refreshed &mdash; free. Premium package or a leaner build, we start the same way.</p>
     <a href="/interested" class="btn btn-primary">Get Your Free Audit &rarr;</a>
@@ -319,21 +330,22 @@
   <!-- PAGER -->
   <section style="background:var(--white); padding-top:40px; padding-bottom:40px;">
     <div class="cs-pager">
-      <a href="/work/titan">&larr; Titan Comfort Solutions</a>
-      <a href="/work/eot">Exteriors of Texas &rarr;</a>
+      <a href="/work/eot">&larr; Exteriors of Texas</a>
+      <a href="/work/titan">Titan Comfort Solutions &rarr;</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>

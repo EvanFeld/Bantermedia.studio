@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1e35" />
   <title>Exteriors of Texas — Roofing Website Concept | Banter Media Work</title>
   <meta name="description" content="A prototype concept for Exteriors of Texas — a roofing and exteriors company in Magnolia, TX. A reimagined homepage and brand direction, built from a blank page to prove the direction. See the Banter Media case study." />
   <link rel="canonical" href="https://bantermedia.studio/work/eot" />
@@ -16,6 +17,7 @@
   <meta name="twitter:image" content="https://bantermedia.studio/assets/clients/eot/eot-site.jpg">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,12 +29,12 @@
   }
   </script>
 </head>
-<body class="cs-page" style="--cs-accent:#B5372B;">
+<body class="theme-blueprint bp-paper cs-page" style="--cs-accent:#B5372B;">
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -45,7 +47,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work" class="active">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work" class="active">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work" class="active">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -64,7 +74,7 @@
         </div>
         <span class="proof-flag tag-prototype">Prototype Mock</span>
         <h1 class="cs-title">STRONG ROOFS.<br>HONEST CREWS.</h1>
-        <p class="cs-lede">A concept prototype &mdash; a reimagining from a blank page, built to prove the direction before a single dollar is committed. Not a delivered build, not a live client engagement: a starting point that shows what an entry-level facelift could look like.</p>
+        <p class="cs-lede">A concept prototype &mdash; a reimagining from a blank page, built to prove the direction before a single dollar is committed. Not a delivered build, not a live client engagement: a starting point that shows what an entry-level refresh could look like.</p>
         <div class="cs-meta">
           <div class="cs-meta-item"><span>Industry</span><strong>Roofing &amp; Exteriors</strong></div>
           <div class="cs-meta-item"><span>Location</span><strong>Magnolia, TX</strong></div>
@@ -73,7 +83,6 @@
         </div>
         <div class="cs-hero-actions">
           <a href="https://eot-roofing.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View the Concept &rarr;</a>
-          <a href="/interested" class="btn btn-outline">Get Your Free Audit</a>
         </div>
       </div>
       <div>
@@ -91,7 +100,7 @@
   </header>
 
   <!-- THE BRIEF -->
-  <section style="background:var(--white);">
+  <section class="bp-grid" style="background:var(--white);">
     <div class="cs-block-head reveal">
       <p class="section-label">The Brief</p>
       <h2 class="section-title">A REAL COMPANY, REIMAGINED</h2>
@@ -122,9 +131,10 @@
       <h2 class="section-title">A HOMEPAGE, FROM A BLANK PAGE</h2>
       <p class="section-sub" style="max-width:600px;">A concept homepage &mdash; not the live site. It reframes the same business around strong roofs and honest crews, with one clear action: request a quote. This is the direction a full build would grow from.</p>
     </div>
-    <div class="reveal" style="position:relative;max-width:1000px;margin:0 auto;">
-      <img src="/assets/clients/eot/eot-site.jpg" alt="Exteriors of Texas concept homepage by Banter Media" style="width:100%;display:block;border-radius:8px;border:1px solid var(--border);box-shadow:0 22px 60px rgba(13,30,53,0.16);">
+    <div class="cs-shot reveal">
+      <img class="shot-main" src="/assets/clients/eot/eot-site.jpg" alt="Exteriors of Texas concept homepage by Banter Media">
     </div>
+    <p class="cs-shot-caption">Concept homepage &mdash; <a href="https://eot-roofing.netlify.app/" target="_blank" rel="noopener noreferrer">view the live prototype &rarr;</a></p>
   </section>
 
   <!-- BRAND DIRECTION -->
@@ -206,7 +216,7 @@
     <div class="cta-logo-clip">
       <img src="/assets/logos/logo-white.png" alt="" class="cta-logo-accent">
     </div>
-    <p class="section-label" style="color:var(--blue-mid);">The Free Facelift Audit</p>
+    <p class="section-label" style="color:var(--blue-mid);">The Free Website Audit</p>
     <h2 class="section-title" style="color:var(--white); margin-bottom:14px;">LIKE THE DIRECTION?<br>LET'S BUILD IT FOR REAL.</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5); margin:0 auto 36px;">This one's a prototype &mdash; yours doesn't have to be. We'll tear down your current site and mock up your brand refreshed, free. A leaner build or the full package, we start the same way.</p>
     <a href="/interested" class="btn btn-primary">Get Your Free Audit &rarr;</a>
@@ -215,21 +225,22 @@
   <!-- PAGER -->
   <section style="background:var(--white); padding-top:40px; padding-bottom:40px;">
     <div class="cs-pager">
-      <a href="/work/hissy-chick">&larr; Hissy Chick Kitchen</a>
-      <a href="/work">All Work &rarr;</a>
+      <a href="/work">&larr; All Case Studies</a>
+      <a href="/work/hissy-chick">Next: Hissy Chick Kitchen &rarr;</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>

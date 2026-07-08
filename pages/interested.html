@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Get Your Free Facelift Audit | Banter Media Group — Magnolia, College Station &amp; Houston</title>
-  <meta name="description" content="Request your Free Facelift Audit — a teardown of your current website plus a free mockup of your brand refreshed. No commitment. Banter Media Group serves Magnolia, College Station & Houston, TX." />
+  <meta name="theme-color" content="#0d1e35" />
+  <title>Get Your Free Website Audit | Banter Media Group — The Woodlands, Magnolia &amp; Houston</title>
+  <meta name="description" content="Request your Free Website Audit — a teardown of your current website plus a free mockup of your brand refreshed. No commitment. Banter Media Group serves The Woodlands, Conroe, Montgomery, Katy, Magnolia & Houston, TX." />
   <link rel="canonical" href="https://bantermedia.studio/interested" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Banter Media Group">
-  <meta property="og:title" content="Get Your Free Facelift Audit — Banter Media Group">
+  <meta property="og:title" content="Get Your Free Website Audit — Banter Media Group">
   <meta property="og:description" content="A free teardown of your current site plus a mockup of your brand refreshed. No commitment.">
   <meta property="og:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <meta property="og:image:width" content="1640">
@@ -16,18 +17,19 @@
   <meta property="og:url" content="https://bantermedia.studio/interested">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bantermediagrp">
-  <meta name="twitter:title" content="Get Your Free Facelift Audit — Banter Media Group">
+  <meta name="twitter:title" content="Get Your Free Website Audit — Banter Media Group">
   <meta name="twitter:description" content="A free teardown of your current site plus a mockup of your brand refreshed. No commitment.">
   <meta name="twitter:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
 </head>
-<body>
+<body class="theme-blueprint bp-paper">
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -40,7 +42,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -57,14 +67,14 @@
   </div>
 
   <!-- FORM SECTION -->
-  <section style="background:var(--white); padding-top:80px;">
+  <section class="bp-grid" style="background:var(--white); padding-top:80px;">
     <div class="interested-wrap">
 
       <!-- LEFT -->
       <div class="interested-info reveal">
         <p class="section-label">How It Works</p>
         <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.2rem);">FREE. FAST.<br>NO STRINGS.</h2>
-        <p class="section-sub">Send the form. Within 48 hours we'll reply with a teardown of your current site and a free mockup of your brand refreshed. If you like what you see, we talk next steps. If not, keep the mockup — no hard feelings.</p>
+        <p class="section-sub">Send the form. Within 48 hours we'll reply with a teardown of your current site and a free mockup of your brand refreshed. If you like what you see, we hop on a free scoping call, lock in a fixed quote, and start the build. If not, keep the mockup — no hard feelings.</p>
 
         <div class="contact-items">
           <div class="contact-item">
@@ -89,7 +99,19 @@
             </div>
             <div class="contact-text">
               <strong>Based In</strong>
-              Houston, TX
+              Magnolia, TX &mdash; serving The Woodlands, Conroe, Montgomery, Katy &amp; Greater Houston
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <strong>Call or Text</strong>
+              <a href="tel:+17135699080">(713) 569-9080</a>
             </div>
           </div>
 
@@ -109,8 +131,9 @@
 
       <!-- RIGHT: FORM -->
       <div class="reveal">
-        <form class="interest-form" id="interestForm" name="interest">
+        <form class="interest-form" id="interestForm" name="interest" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="interest" />
+          <p hidden aria-hidden="true"><label>Don&rsquo;t fill this out: <input name="bot-field" /></label></p>
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
@@ -151,9 +174,10 @@
               <option value="branding-kit">The Branding Kit — cards, apparel, signage</option>
               <option value="launch-kit">The Launch Kit — branded ads that match</option>
               <option value="content">Content — photo, video, reels, events, portraits</option>
-              <option value="full-facelift">The Full Facelift — site + branding + launch</option>
+              <option value="full-refresh">The Full Refresh — site + branding + launch (save ~$1,000)</option>
               <option value="not-sure">Not sure yet — audit me and tell me</option>
             </select>
+            <p class="price-hook" style="margin-top:10px;">Wondering what things cost? <a href="/pricing">See packages &amp; pricing &rarr;</a></p>
           </div>
 
           <div class="form-group">
@@ -179,13 +203,14 @@
   <!-- FOOTER -->
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>

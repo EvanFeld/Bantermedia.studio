@@ -66,10 +66,12 @@ nav.scrolled {
 }
 
 .nav-logo-img {
-  height: 42px;
+  height: 58px;
   width: auto;
   object-fit: scale-down;
   flex-shrink: 0;
+  /* oversized on purpose — negative margin keeps the nav bar height unchanged */
+  margin: -8px 0;
 }
 
 
@@ -1601,8 +1603,8 @@ footer {
   scroll-margin-top: 96px;
 }
 
-/* ─── FACELIFT HERO (split layout) ─── */
-.hero-facelift {
+/* ─── SPLIT HERO (split layout) ─── */
+.hero-split {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 64px;
@@ -1612,15 +1614,15 @@ footer {
   min-height: auto;
 }
 
-.hero-facelift .hero-eyebrow { letter-spacing: 0.22em; }
+.hero-split .hero-eyebrow { letter-spacing: 0.22em; }
 
-.hero-facelift .hero-title {
+.hero-split .hero-title {
   font-size: clamp(3rem, 6.2vw, 5.8rem);
 }
 
-.hero-facelift .hero-sub { margin-top: 22px; max-width: 460px; }
+.hero-split .hero-sub { margin-top: 22px; max-width: 460px; }
 
-.hero-facelift .hero-cta {
+.hero-split .hero-cta {
   margin-top: 34px;
   justify-content: flex-start;
 }
@@ -2301,7 +2303,7 @@ footer {
 /* Stacked links inside offer cards (deep link + audit link) */
 .offer-link + .offer-link { margin-top: 10px; }
 
-/* ─── FACELIFT RESPONSIVE ─── */
+/* ─── SPLIT-HERO RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .offers-grid { grid-template-columns: repeat(2, 1fr); }
   .mockup-grid { grid-template-columns: repeat(2, 1fr); }
@@ -2310,7 +2312,7 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .hero-facelift {
+  .hero-split {
     grid-template-columns: 1fr;
     gap: 44px;
     padding: 130px 24px 70px;
@@ -2912,3 +2914,182 @@ footer {
   .cs-metrics { grid-template-columns: 1fr 1fr; }
   .swatch-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ═══════════════ PRICING PAGE ═══════════════ */
+.pricing-header {
+  background: var(--white);
+  text-align: center;
+  padding: 150px 64px 68px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(43,108,176,0.10) 0%, transparent 62%);
+  pointer-events: none;
+}
+.pricing-header > * { position: relative; }
+.pricing-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 0.04em;
+  line-height: 0.94;
+  color: var(--navy);
+}
+.pricing-header h1 .bl { color: var(--blue); }
+.pricing-note {
+  margin: 22px auto 0;
+  max-width: 500px;
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* Section wrapper — tighter than default section to keep a long menu calm */
+.price-sec { padding: 62px 64px; }
+.price-sec--alt { background: var(--bg); }
+.price-sec-head { text-align: center; margin-bottom: 40px; }
+.price-sec-head .k {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.32em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 10px;
+}
+.price-sec-head h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  letter-spacing: 0.05em; color: var(--navy); line-height: 1;
+}
+.price-sec-head p { margin: 10px auto 0; max-width: 440px; font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+
+/* Core tier cards */
+.pkg-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  max-width: 1080px; margin: 0 auto; align-items: stretch;
+}
+.pkg-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 6px;
+  padding: 34px 30px 30px; display: flex; flex-direction: column; position: relative;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.pkg-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(13,30,53,0.10); border-color: var(--blue); }
+.pkg-card--pop { border-color: var(--blue); box-shadow: 0 10px 34px rgba(43,108,176,0.16); }
+.pkg-flag {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: #fff; font-size: 0.56rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; white-space: nowrap;
+}
+.pkg-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.05em; color: var(--navy); margin-bottom: 6px; }
+.pkg-price { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; letter-spacing: 0.02em; color: var(--blue); line-height: 1; }
+.pkg-desc { font-size: 0.82rem; color: var(--gray); line-height: 1.6; margin: 14px 0 16px; }
+.pkg-list { list-style: none; margin: 0 0 18px; display: flex; flex-direction: column; gap: 8px; }
+.pkg-list li { position: relative; padding-left: 22px; font-size: 0.8rem; color: var(--navy); line-height: 1.45; }
+.pkg-list li::before {
+  content: ''; position: absolute; left: 2px; top: 4px; width: 11px; height: 6px;
+  border-left: 2px solid var(--blue); border-bottom: 2px solid var(--blue); transform: rotate(-45deg);
+}
+.pkg-best { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--gray); line-height: 1.5; }
+.pkg-best b { color: var(--navy); }
+
+/* Specialty builds */
+.spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 1080px; margin: 0 auto; }
+.spec-card {
+  background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--blue-mid);
+  border-radius: 4px; padding: 22px 24px;
+}
+.spec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.spec-name { font-weight: 700; font-size: 0.92rem; color: var(--navy); }
+.spec-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--blue); letter-spacing: 0.02em; white-space: nowrap; }
+.spec-desc { font-size: 0.78rem; color: var(--gray); line-height: 1.6; }
+.spec-tag { color: var(--blue-mid); font-weight: 700; }
+
+/* Add-ons */
+.addon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1080px; margin: 0 auto; }
+.addon-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 4px;
+  padding: 24px 22px; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.addon-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(13,30,53,0.09); border-color: var(--blue); }
+.addon-name { font-weight: 700; font-size: 0.9rem; color: var(--navy); margin-bottom: 3px; }
+.addon-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem; color: var(--blue); letter-spacing: 0.03em; margin-bottom: 10px; }
+.addon-desc { font-size: 0.76rem; color: var(--gray); line-height: 1.55; margin-bottom: 14px; }
+.addon-link { margin-top: auto; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); }
+
+/* Maintenance band */
+.maint-band {
+  max-width: 1080px; margin: 0 auto; background: var(--blue-pale); border: 1px solid var(--border);
+  border-radius: 6px; padding: 26px 34px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.maint-band .mk { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
+.maint-band .mv { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: var(--navy); letter-spacing: 0.04em; }
+.maint-plans { font-size: 0.95rem; color: var(--navy); }
+.maint-plans b { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--blue); letter-spacing: 0.02em; }
+
+/* Process steps */
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: 1000px; margin: 0 auto; }
+.pstep { text-align: center; padding: 8px; }
+.pstep .n { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; color: var(--blue-mid); letter-spacing: 0.05em; margin-bottom: 6px; }
+.pstep .t { font-weight: 700; font-size: 0.9rem; color: var(--navy); margin-bottom: 4px; }
+.pstep .d { font-size: 0.75rem; color: var(--gray); line-height: 1.5; }
+
+/* Bundle save chip (inside .flagship) */
+.flagship-save { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--blue-mid); letter-spacing: 0.03em; white-space: nowrap; }
+
+@media (max-width: 1024px) {
+  .pkg-grid, .spec-grid, .addon-grid { grid-template-columns: repeat(2, 1fr); max-width: 660px; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); max-width: 520px; }
+}
+@media (max-width: 900px) {
+  .price-sec { padding: 52px 24px; }
+}
+@media (max-width: 600px) {
+  .pkg-grid, .spec-grid, .addon-grid, .process-steps { grid-template-columns: 1fr; max-width: 420px; }
+  .pricing-header { padding: 122px 24px 50px; }
+  .price-sec { padding: 44px 20px; }
+  .maint-band { flex-direction: column; text-align: center; }
+}
+
+/* Price hook line on offer pages */
+.price-hook { margin-top: 16px; font-size: 0.8rem; color: var(--gray); letter-spacing: 0.02em; }
+.price-hook b { color: var(--navy); font-weight: 700; }
+.price-hook a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.price-hook a:hover { text-decoration: underline; }
+
+/* ═══════════════ CALM MEDIA PASS ═══════════════
+   Scaled-down presentation for case-study screenshots + bilingual ad sets. */
+.cs-shot { position: relative; max-width: 720px; margin: 0 auto; }
+.cs-shot .shot-main {
+  width: 100%; display: block; border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 34px rgba(13,30,53,0.10);
+}
+.cs-shot .shot-phone {
+  position: absolute; right: 18px; bottom: 18px;
+  width: 16%; min-width: 92px; display: block;
+  border-radius: 12px; border: 4px solid #fff;
+  box-shadow: 0 10px 26px rgba(13,30,53,0.22);
+}
+.cs-shot-caption {
+  text-align: center; margin-top: 14px;
+  font-size: 0.72rem; color: var(--gray-light); letter-spacing: 0.02em;
+}
+.cs-shot-caption a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.cs-shot-caption a:hover { text-decoration: underline; }
+
+/* Cap ad walls so squares stay card-sized, not billboard-sized */
+.ad-grid { max-width: 880px; }
+
+/* EN/ES toggle for bilingual ad sets (JS in script.js; cards carry .lang-en / .lang-es) */
+.lang-toggle {
+  display: inline-flex; border: 1px solid var(--border);
+  border-radius: 4px; overflow: hidden; background: var(--white);
+}
+.lt-btn {
+  font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 9px 18px; background: var(--white); color: var(--gray);
+  border: none; cursor: pointer; transition: background 0.2s, color 0.2s;
+}
+.lt-btn + .lt-btn { border-left: 1px solid var(--border); }
+.lt-btn.active { background: var(--blue); color: var(--white); }
+.ad-card.lang-hidden { display: none; }

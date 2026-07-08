@@ -4,3 +4,8 @@
 # Environment variables (contains secrets)
 .env
 .env.*
+
+# Local tooling / scratch (never deploy)
+mcps/
+terminals/
+Banter Branding Kit.html

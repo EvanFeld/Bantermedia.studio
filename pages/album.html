@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1e35" />
   <title>Client Gallery | Banter Media Group</title>
-  <meta name="description" content="Client photo gallery by Banter Media Group — content shot for local businesses, teams, and events across Magnolia, College Station, and Houston, TX." />
+  <meta name="description" content="Client photo gallery by Banter Media Group — content shot for local businesses, teams, and events across The Woodlands, Conroe, Montgomery, Katy, Magnolia, and Houston, TX." />
   <meta property="og:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <meta property="og:url" content="https://bantermedia.studio/album">
   <link rel="canonical" href="https://bantermedia.studio/album">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
 </head>
-<body>
+<body class="theme-blueprint bp-paper">
 
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -28,7 +30,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -38,13 +48,13 @@
   </nav>
 
   <div class="page-header">
-    <a href="#" id="back-link" class="back-link">← Back</a>
+    <a href="/library" id="back-link" class="back-link">← Back to the Library</a>
     <p class="section-label" id="cat-label">Sports</p>
     <h1 class="section-title" id="event-title">LOADING...</h1>
     <p class="section-sub" style="margin-bottom:0;">Click any photo to view full size. Use arrow keys to navigate.</p>
   </div>
 
-  <section style="background:var(--white);">
+  <section class="bp-grid" style="background:var(--white);">
     <div id="photos-grid" class="photo-grid">
       <div class="loader"><div class="spinner"></div></div>
     </div>
@@ -61,13 +71,14 @@
 
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>
@@ -151,8 +162,8 @@
     const eventTag    = params.get('tag')   || '';
 
     const backLink = document.getElementById('back-link');
-    backLink.href        = '/work';
-    backLink.textContent = '← All Work';
+    backLink.href        = '/library';
+    backLink.textContent = '← Back to the Library';
 
     // ── Local album mode (static data from photos-data.js) ───────────────────
     if (localAlbumId) {

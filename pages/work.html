@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Work — Facelift Case Studies &amp; Content | Banter Media Group</title>
-  <meta name="description" content="See real small-business facelifts by Banter Media Group — before/after website transformations plus the full content library: sports, events, restaurants, weddings, and portraits across Magnolia, College Station, and Houston, TX." />
+  <meta name="theme-color" content="#0d1e35" />
+  <title>Our Work — Website Case Studies | Banter Media Group</title>
+  <meta name="description" content="See real small-business website redesigns by Banter Media Group — before/after case studies, real client work and concept builds clearly labeled, serving The Woodlands, Conroe, Montgomery, Katy, Magnolia, and Houston, TX." />
   <link rel="canonical" href="https://bantermedia.studio/work" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Banter Media Group">
   <meta property="og:title" content="Our Work | Banter Media Group">
-  <meta property="og:description" content="Before/after facelift case studies and the full content library. Same brand, whole new look.">
+  <meta property="og:description" content="Before/after website case studies — real client work and concept builds, clearly labeled. Same brand, whole new look.">
   <meta property="og:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <meta property="og:image:width" content="1640">
   <meta property="og:image:height" content="624">
@@ -17,16 +18,17 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bantermediagrp">
   <meta name="twitter:title" content="Our Work | Banter Media Group">
-  <meta name="twitter:description" content="Before/after facelift case studies and the full content library. Same brand, whole new look.">
+  <meta name="twitter:description" content="Before/after website case studies — real client work and concept builds, clearly labeled. Same brand, whole new look.">
   <meta name="twitter:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
 </head>
-<body>
+<body class="theme-blueprint bp-paper">
 
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -39,7 +41,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work" class="active">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work" class="active">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work" class="active">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -49,29 +59,29 @@
   </nav>
 
   <!-- PAGE HEADER -->
-  <div class="page-header">
+  <div class="page-header page-header--grid-rise">
     <p class="section-label">Proof</p>
     <h1 class="section-title">THE WORK</h1>
-    <p class="section-sub" style="margin-bottom:0;">Real client work and concept builds — clearly labeled — plus the full content library below.</p>
+    <p class="section-sub" style="margin-bottom:0;">Real client work and concept builds — clearly labeled.</p>
   </div>
 
-  <!-- FACELIFT CASE STUDIES -->
-  <section id="case-studies" style="background:var(--white);">
+  <!-- WEBSITE CASE STUDIES -->
+  <section class="bp-grid" id="case-studies" style="background:var(--white);">
     <div class="services-header reveal">
       <div>
-        <p class="section-label">Facelifts</p>
-        <h2 class="section-title">THREE BUILDS. THREE TIERS.</h2>
+        <p class="section-label">Case Studies</p>
+        <h2 class="section-title">THREE BUILDS. CLEARLY LABELED.</h2>
         <p class="section-sub" style="max-width:560px;">Real client work and concept builds — clearly labeled. Every build ships with a keepable asset package. Tap any one to see everything inside it.</p>
       </div>
       <a href="/interested" class="btn btn-primary" style="font-size:0.7rem;">Get Your Free Audit &rarr;</a>
     </div>
 
     <div class="tier-grid reveal">
-      <!-- Tier 01 — Prototype -->
+      <!-- Prototype Concept -->
       <a href="/work/eot" class="tier-card">
         <div class="tier-media">
           <img src="/assets/clients/eot/eot-site.jpg" alt="Exteriors of Texas concept website" loading="lazy">
-          <span class="tier-rank">Tier 01 · Prototype</span>
+          <span class="tier-rank">01 &middot; Starter</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-prototype">Prototype Mock</span>
@@ -88,11 +98,11 @@
         </div>
       </a>
 
-      <!-- Tier 02 — Real Launch -->
+      <!-- Live Client -->
       <a href="/work/hissy-chick" class="tier-card">
         <div class="tier-media">
           <img src="/assets/showcase/hissy-after.jpg" alt="Hissy Chick Kitchen website redesigned by Banter Media" loading="lazy">
-          <span class="tier-rank">Tier 02 · Real Launch</span>
+          <span class="tier-rank">02 &middot; Standard</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-live">Live Client</span>
@@ -109,11 +119,11 @@
         </div>
       </a>
 
-      <!-- Tier 03 — Premium (flagship) -->
+      <!-- Premium Concept (flagship) -->
       <a href="/work/titan" class="tier-card tier-card--flag">
         <div class="tier-media">
           <img src="/assets/clients/titan/site-desktop.jpg" alt="Titan Comfort Solutions website designed by Banter Media" loading="lazy">
-          <span class="tier-rank">Tier 03 · Premium</span>
+          <span class="tier-rank">03 &middot; Flagship</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-premium">Premium Concept</span>
@@ -132,34 +142,26 @@
     </div>
   </section>
 
-  <!-- CONTENT LIBRARY HEADER -->
-  <section style="background:var(--bg); padding:72px 64px 12px;">
-    <p class="section-label">The Content Library</p>
-    <h2 class="section-title" style="font-size:clamp(2rem, 4vw, 3rem);">EVERY SHOOT. EVERY STORY.</h2>
-    <p class="section-sub" style="margin-bottom:0;">Sports, events, restaurants, weddings, portraits — the content side of Banter. Filter by category.</p>
-  </section>
-
-  <!-- STICKY FILTER BAR -->
-  <div class="work-filter-bar">
-    <div id="filter-btns"></div>
-    <span id="album-count" class="work-count"></span>
-  </div>
-
-  <!-- ALBUMS GRID -->
-  <section style="background:var(--bg); padding-top:48px;">
-    <div id="albums-grid" class="gigs-grid">
+  <!-- CONTENT LIBRARY TEASER — white band before the navy footer -->
+  <section class="bp-white">
+    <div class="reveal">
+      <p class="section-label">The Content Library</p>
+      <h2 class="section-title" style="font-size:clamp(2rem, 4vw, 3rem);">THE PHOTO &amp; VIDEO SIDE</h2>
+      <p class="section-sub">Sports, live events, restaurants, weddings, portraits — the content engine behind the look.</p>
+      <a href="/library" class="btn btn-outline">Browse the Library &rarr;</a>
     </div>
   </section>
 
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>
@@ -170,240 +172,5 @@
   </footer>
 
   <script src="/js/script.js"></script>
-  <script src="/js/photos-data.js"></script>
-
-  <script>
-    (function () {
-      document.addEventListener('DOMContentLoaded', function () {
-
-        var CDN_OPTS = 'w_700,q_auto,f_auto';
-
-        // ── Guard against missing LOCAL_ALBUMS ───────────────────────────────
-        var filterWrap = document.getElementById('filter-btns');
-        var albumsGrid = document.getElementById('albums-grid');
-
-        if (typeof LOCAL_ALBUMS === 'undefined' || !Array.isArray(LOCAL_ALBUMS)) {
-          albumsGrid.innerHTML =
-            '<p class="load-error" style="padding:32px 24px;color:var(--gray);font-size:0.9rem;">' +
-            'Albums could not be loaded. Please refresh the page.' +
-            '</p>';
-        } else {
-
-          // ── Build filter buttons ──────────────────────────────────────────
-          var tags = ['All'].concat(
-            LOCAL_ALBUMS
-              .map(function (a) { return a.tag; })
-              .filter(function (tag, idx, arr) { return arr.indexOf(tag) === idx; })
-          );
-          var activeTag = 'All';
-
-          tags.forEach(function (tag) {
-            var btn = document.createElement('button');
-            btn.className = 'filter-btn' + (tag === 'All' ? ' active' : '');
-            btn.textContent = tag;
-            btn.setAttribute('aria-pressed', tag === 'All' ? 'true' : 'false');
-            btn.addEventListener('click', function () { filterAlbums(tag); });
-            filterWrap.appendChild(btn);
-          });
-
-          // ── Build albums grid ─────────────────────────────────────────────
-          function renderAlbums(filtered) {
-            // FIX 6 (Improvement): Show a message when the filtered set is empty.
-            if (!filtered || filtered.length === 0) {
-              albumsGrid.innerHTML =
-                '<p style="padding:32px 24px;color:var(--gray);font-size:0.9rem;">' +
-                'No albums in this category yet.' +
-                '</p>';
-              return;
-            }
-
-            var countEl = document.getElementById('album-count');
-            if (countEl) countEl.textContent = filtered.length + (filtered.length === 1 ? ' Album' : ' Albums');
-
-            // Cap column count so sparse filtered sets don't leave empty right columns
-            var maxCols = window.innerWidth <= 540 ? 2 : window.innerWidth <= 900 ? 3 : 4;
-            albumsGrid.style.columnCount = Math.min(filtered.length, maxCols);
-
-            albumsGrid.innerHTML = filtered.map(function (album) {
-              var coverUrl = cloudUrl(album.cover, CDN_OPTS);
-              var safeId   = encodeURIComponent(album.id);
-              return (
-                '<div class="gig-card dyn-card reveal"' +
-                '     role="button" tabindex="0"' +
-                '     data-href="/album?localAlbum=' + safeId + '">' +
-                '  <img class="gig-img"' +
-                '       src="' + coverUrl + '"' +
-                '       alt="' + escAttr(album.title) + '"' +
-                '       loading="lazy"' +
-                '       onerror="this.onerror=null;this.src=\'/assets/placeholder.jpg\';this.alt=\'Image unavailable\';" />' +
-                '  <div class="gig-overlay">' +
-                '    <p class="gig-tag">' + escHtml(album.tag) + '</p>' +
-                '    <p class="gig-name">' + escHtml(album.title.toUpperCase()) + '</p>' +
-                '  </div>' +
-                '</div>'
-              );
-            }).join('');
-
-            // FIX 7 (Warning): Guard observer.observe() — observer is defined in
-            // script.js, which could fail to load or be renamed. Checking first
-            // prevents an uncaught ReferenceError that would break the reveal animation.
-            if (typeof observer !== 'undefined' && observer && typeof observer.observe === 'function') {
-              albumsGrid.querySelectorAll('.reveal').forEach(function (el) {
-                observer.observe(el);
-              });
-            }
-
-          }
-
-          function filterAlbums(tag) {
-            activeTag = tag;
-            filterWrap.querySelectorAll('.filter-btn').forEach(function (btn) {
-              var isActive = btn.textContent === tag;
-              btn.classList.toggle('active', isActive);
-              btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            });
-            var filtered = tag === 'All'
-              ? LOCAL_ALBUMS
-              : LOCAL_ALBUMS.filter(function (a) { return a.tag === tag; });
-            renderAlbums(filtered);
-          }
-
-          // Pre-select filter from URL param — supports ?filter= (niche pages) and legacy ?tag=
-          var params = new URLSearchParams(window.location.search);
-          var urlTag = params.get('filter') || params.get('tag');
-          if (urlTag) {
-            filterAlbums(urlTag);
-          } else {
-            renderAlbums(LOCAL_ALBUMS);
-          }
-
-          albumsGrid.addEventListener('click', function (e) {
-            var card = e.target.closest('[data-href]');
-            if (card) window.location.href = card.dataset.href;
-          });
-          albumsGrid.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              var card = e.target.closest('[data-href]');
-              if (card) window.location.href = card.dataset.href;
-            }
-          });
-        }
-
-      }); // end DOMContentLoaded
-
-      // ── Utility helpers ───────────────────────────────────────────────────
-      function escHtml(str) {
-        return String(str)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
-
-      // Lighter version for use inside attribute values that are already quoted.
-      function escAttr(str) {
-        return String(str)
-          .replace(/&/g, '&amp;')
-          .replace(/"/g, '&quot;');
-      }
-
-    })(); // end IIFE
-  </script>
-
-  <style>
-    /* Masonry — images at natural height, pack together like columns */
-    #albums-grid {
-      display: block;
-      columns: 4;
-      column-gap: 8px;
-    }
-    #albums-grid .gig-card {
-      break-inside: avoid;
-      width: 100%;
-      margin-bottom: 8px;
-      grid-column: unset !important;
-    }
-    #albums-grid .gig-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      min-height: unset;
-      object-fit: unset;
-    }
-    @media (max-width: 900px) {
-      #albums-grid { columns: 3; }
-    }
-    @media (max-width: 540px) {
-      #albums-grid { columns: 2; }
-    }
-
-    /* Sticky filter bar */
-    .work-filter-bar {
-      position: sticky;
-      top: 65px;
-      z-index: 50;
-      background: rgba(244,247,251,0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    #filter-btns {
-      display: flex;
-      align-items: stretch;
-      overflow-x: auto;
-      scrollbar-width: none;
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-    #filter-btns::-webkit-scrollbar { display: none; }
-    .work-count {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gray-light);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    /* Editorial tab-strip filter buttons */
-    .filter-btn {
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 18px 0;
-      margin-right: 36px;
-      font-size: 0.63rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-family: 'Inter', sans-serif;
-      color: var(--gray-light);
-      cursor: pointer;
-      transition: color 0.2s ease, border-color 0.2s ease;
-      border-radius: 0;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .filter-btn:hover {
-      color: var(--navy);
-    }
-    .filter-btn.active {
-      color: var(--navy);
-      border-bottom-color: var(--blue);
-    }
-    @media (max-width: 600px) {
-      .work-filter-bar { padding: 0 16px; top: 58px; gap: 8px; }
-      .filter-btn { margin-right: 14px; font-size: 0.6rem; letter-spacing: 0.08em; padding: 14px 0; }
-      .work-count { font-size: 0.58rem; letter-spacing: 0.1em; white-space: nowrap; flex-shrink: 0; }
-    }
-  </style>
-
 </body>
 </html>

@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1e35" />
   <title>Launch Kits — Branded Instagram Ads, Feed &amp; Story, English &amp; Español | Banter Media Group</title>
-  <meta name="description" content="Branded Instagram ads and launch creatives that match your new look — feed + story formats, English & Español, ready to post the day you go live. See real and concept campaign sets. Magnolia, College Station & Houston, TX." />
+  <meta name="description" content="Branded Instagram ads and launch creatives that match your new look — feed + story formats, English & Español, ready to post the day you go live. See real and concept campaign sets. The Woodlands, Conroe, Montgomery, Katy, Magnolia & Houston, TX." />
   <link rel="canonical" href="https://bantermedia.studio/launch-kits" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Banter Media Group">
@@ -21,6 +22,7 @@
   <meta name="twitter:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,19 +38,22 @@
       "telephone": "+17135699080"
     },
     "areaServed": [
+      {"@type": "City", "name": "The Woodlands", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Conroe", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Montgomery", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Katy", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "City", "name": "Magnolia", "containedInPlace": {"@type": "State", "name": "Texas"}},
-      {"@type": "City", "name": "College Station", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}}
     ]
   }
   </script>
 </head>
-<body>
+<body class="theme-blueprint bp-paper">
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -61,7 +66,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -78,11 +91,12 @@
     <div class="offer-cta-row">
       <a href="/interested" class="btn btn-primary">Get Your Free Audit &rarr;</a>
     </div>
-    <p class="offer-micro">Free site teardown + a mockup of your brand refreshed. No commitment.</p>
+    <p class="offer-micro">Free look at your current ads &mdash; and a sample creative in your brand. No commitment.</p>
+    <p class="price-hook">Launch Kits from <b>$500</b>. <a href="/pricing">See full pricing &rarr;</a></p>
   </div>
 
   <!-- WHAT YOU GET -->
-  <section style="background:var(--bg);">
+  <section class="bp-grid" style="background:var(--bg);">
     <div class="services-header reveal">
       <div>
         <p class="section-label">What You Get</p>
@@ -118,7 +132,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section style="background:var(--white);">
+  <section class="bp-grid bp-grid--rise" style="background:var(--white);">
     <div class="services-header reveal">
       <div>
         <p class="section-label">How It Works</p>
@@ -145,13 +159,14 @@
   </section>
 
   <!-- PROOF: AD SHOWCASE -->
-  <section id="proof" style="background:var(--bg);">
+  <!-- white band; ad creatives sit in navy plates -->
+  <section id="proof" class="bp-white">
     <div class="events-header reveal">
       <div>
         <p class="section-label">Proof</p>
         <h2 class="section-title">THE AD SHOWCASE</h2>
       </div>
-      <a href="/interested" class="btn btn-primary" style="font-size:0.7rem;">Get Your Free Audit &rarr;</a>
+      <a href="/interested" class="back-link">Get Your Free Audit &rarr;</a>
     </div>
 
     <!-- HISSY CHICK — REAL -->
@@ -196,52 +211,54 @@
         <span class="proof-flag tag-concept" style="margin-bottom:0;">Concept</span>
       </div>
       <p class="ad-group-sub">A concept campaign set for a bilingual HVAC brand — site launch, website promo, and membership drive. Every campaign in feed + story, English &amp; Español.</p>
+      <p class="ad-group-sub" style="margin-bottom:10px;">Concept campaigns ship in English &amp; Espa&ntilde;ol &mdash; flip to compare.</p>
+      <div class="lang-toggle" role="group" aria-label="Ad language"><button type="button" class="lt-btn active" data-lang="en" aria-pressed="true">English</button><button type="button" class="lt-btn" data-lang="es" aria-pressed="false">Espa&ntilde;ol</button></div>
       <div class="ad-grid">
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-launch-feed-en.jpg">
+        <figure class="ad-card lang-en" data-full="/assets/clients/titan/ad-launch-feed-en.jpg">
           <img src="/assets/clients/titan/ad-launch-feed-en.jpg" alt="Concept — Titan site-launch Instagram feed ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Launch</span><span class="ad-chip">Feed</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-launch-feed-es.jpg">
+        <figure class="ad-card lang-es" data-full="/assets/clients/titan/ad-launch-feed-es.jpg">
           <img src="/assets/clients/titan/ad-launch-feed-es.jpg" alt="Concept — Titan site-launch Instagram feed ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Launch</span><span class="ad-chip">Feed</span><span class="ad-chip">ES</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-launch-story-en.jpg">
+        <figure class="ad-card ad-story lang-en" data-full="/assets/clients/titan/ad-launch-story-en.jpg">
           <img src="/assets/clients/titan/ad-launch-story-en.jpg" alt="Concept — Titan site-launch Instagram story ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Launch</span><span class="ad-chip">Story</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-launch-story-es.jpg">
+        <figure class="ad-card ad-story lang-es" data-full="/assets/clients/titan/ad-launch-story-es.jpg">
           <img src="/assets/clients/titan/ad-launch-story-es.jpg" alt="Concept — Titan site-launch Instagram story ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Launch</span><span class="ad-chip">Story</span><span class="ad-chip">ES</span></figcaption>
         </figure>
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-website-feed-en.jpg">
+        <figure class="ad-card lang-en" data-full="/assets/clients/titan/ad-website-feed-en.jpg">
           <img src="/assets/clients/titan/ad-website-feed-en.jpg" alt="Concept — Titan website promo Instagram feed ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Website</span><span class="ad-chip">Feed</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-website-feed-es.jpg">
+        <figure class="ad-card lang-es" data-full="/assets/clients/titan/ad-website-feed-es.jpg">
           <img src="/assets/clients/titan/ad-website-feed-es.jpg" alt="Concept — Titan website promo Instagram feed ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Website</span><span class="ad-chip">Feed</span><span class="ad-chip">ES</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-website-story-en.jpg">
+        <figure class="ad-card ad-story lang-en" data-full="/assets/clients/titan/ad-website-story-en.jpg">
           <img src="/assets/clients/titan/ad-website-story-en.jpg" alt="Concept — Titan website promo Instagram story ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Website</span><span class="ad-chip">Story</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-website-story-es.jpg">
+        <figure class="ad-card ad-story lang-es" data-full="/assets/clients/titan/ad-website-story-es.jpg">
           <img src="/assets/clients/titan/ad-website-story-es.jpg" alt="Concept — Titan website promo Instagram story ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Website</span><span class="ad-chip">Story</span><span class="ad-chip">ES</span></figcaption>
         </figure>
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-membership-feed-en.jpg">
+        <figure class="ad-card lang-en" data-full="/assets/clients/titan/ad-membership-feed-en.jpg">
           <img src="/assets/clients/titan/ad-membership-feed-en.jpg" alt="Concept — Titan membership Instagram feed ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Membership</span><span class="ad-chip">Feed</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card" data-full="/assets/clients/titan/ad-membership-feed-es.jpg">
+        <figure class="ad-card lang-es" data-full="/assets/clients/titan/ad-membership-feed-es.jpg">
           <img src="/assets/clients/titan/ad-membership-feed-es.jpg" alt="Concept — Titan membership Instagram feed ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Membership</span><span class="ad-chip">Feed</span><span class="ad-chip">ES</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-membership-story-en.jpg">
+        <figure class="ad-card ad-story lang-en" data-full="/assets/clients/titan/ad-membership-story-en.jpg">
           <img src="/assets/clients/titan/ad-membership-story-en.jpg" alt="Concept — Titan membership Instagram story ad, English" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Membership</span><span class="ad-chip">Story</span><span class="ad-chip">EN</span></figcaption>
         </figure>
-        <figure class="ad-card ad-story" data-full="/assets/clients/titan/ad-membership-story-es.jpg">
+        <figure class="ad-card ad-story lang-es" data-full="/assets/clients/titan/ad-membership-story-es.jpg">
           <img src="/assets/clients/titan/ad-membership-story-es.jpg" alt="Concept — Titan membership Instagram story ad, Spanish" loading="lazy" />
           <figcaption class="ad-meta"><span class="ad-chip">Membership</span><span class="ad-chip">Story</span><span class="ad-chip">ES</span></figcaption>
         </figure>
@@ -271,7 +288,7 @@
     <div class="cta-logo-clip">
       <img src="/assets/logos/logo-white.png" alt="" class="cta-logo-accent">
     </div>
-    <p class="section-label" style="color:var(--blue-mid);">The Free Facelift Audit</p>
+    <p class="section-label" style="color:var(--blue-mid);">The Free Website Audit</p>
     <h2 class="section-title" style="color:var(--white); margin-bottom:14px;">SEE YOUR FEED<br>WITH THE NEW LOOK</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5); margin:0 auto 36px;">A free teardown of your current presence plus a mockup of your brand refreshed. If you like what you see, we build the kit.</p>
     <a href="/interested" class="btn btn-primary">Get Your Free Audit &rarr;</a>
@@ -280,13 +297,14 @@
   <!-- FOOTER -->
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>
@@ -300,7 +318,8 @@
   <script>
     // Ad-showcase lightbox — same pattern as album.html
     (function () {
-      var cards = Array.prototype.slice.call(document.querySelectorAll('.ad-card[data-full]'));
+      var allCards = Array.prototype.slice.call(document.querySelectorAll('.ad-card[data-full]'));
+      var cards   = allCards;
       var lb      = document.getElementById('lightbox');
       var lbImg   = document.getElementById('lightbox-img');
       var counter = document.getElementById('lightbox-counter');
@@ -312,8 +331,10 @@
         lbImg.alt = cards[current].querySelector('img').alt;
         counter.textContent = (current + 1) + ' / ' + cards.length;
       }
-      function open(i) {
-        show(i);
+      function open(card) {
+        // Recompute at open time so hidden-language cards are skipped
+        cards = allCards.filter(function (c) { return !c.classList.contains('lang-hidden'); });
+        show(Math.max(cards.indexOf(card), 0));
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
       }
@@ -322,8 +343,8 @@
         document.body.style.overflow = '';
       }
 
-      cards.forEach(function (card, i) {
-        card.addEventListener('click', function () { open(i); });
+      allCards.forEach(function (card) {
+        card.addEventListener('click', function () { open(card); });
       });
       lb.querySelector('.lightbox-close').addEventListener('click', close);
       lb.querySelector('.lightbox-prev').addEventListener('click', function () { show(current - 1); });

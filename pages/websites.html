@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Small-Business Website Design &amp; Redesign | Banter Media Group — Magnolia, College Station &amp; Houston, TX</title>
-  <meta name="description" content="A modern website that turns visitors into customers — new build or full redesign, built on the brand you already have. See real before/afters, then get a free site teardown + mockup. Serving Magnolia, College Station & Houston, TX." />
+  <meta name="theme-color" content="#0d1e35" />
+  <title>Small-Business Website Design &amp; Redesign | Banter Media Group — The Woodlands, Magnolia &amp; Houston, TX</title>
+  <meta name="description" content="A modern website that turns visitors into customers — new build or full redesign, built on the brand you already have. Explore three example builds start to finish, then get a free site teardown + mockup. Serving The Woodlands, Conroe, Montgomery, Katy, Magnolia & Houston, TX." />
   <link rel="canonical" href="https://bantermedia.studio/websites" />
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Banter Media Group">
@@ -21,6 +22,7 @@
   <meta name="twitter:image" content="https://bantermedia.studio/assets/og/og-image.jpg">
   <link rel="icon" href="/assets/logos/Blue-logo-with-white-bg-01.png" type="image/png">
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/blueprint-accent.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,19 +38,22 @@
       "telephone": "+17135699080"
     },
     "areaServed": [
+      {"@type": "City", "name": "The Woodlands", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Conroe", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Montgomery", "containedInPlace": {"@type": "State", "name": "Texas"}},
+      {"@type": "City", "name": "Katy", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "City", "name": "Magnolia", "containedInPlace": {"@type": "State", "name": "Texas"}},
-      {"@type": "City", "name": "College Station", "containedInPlace": {"@type": "State", "name": "Texas"}},
       {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}}
     ]
   }
   </script>
 </head>
-<body>
+<body class="theme-blueprint bp-paper">
 
   <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
-      <img src="/assets/logos/logo-header-footer.png" alt="Banter Media" class="nav-logo-img">
+      <img src="/assets/logos/logo-white.png" alt="Banter Media" class="nav-logo-img"><span class="nav-wordmark">Banter</span>
     </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
@@ -61,7 +66,15 @@
           <li><a href="/content">Content</a></li>
         </ul>
       </li>
-      <li><a href="/work">Work</a></li>
+      <li class="nav-dropdown">
+        <a href="/work">Portfolio <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <ul class="nav-dropdown-menu">
+          <li><a href="/work/ads">Ads</a></li>
+          <li><a href="/work">Websites</a></li>
+          <li><a href="/work/branded-material">Branded Material</a></li>
+        </ul>
+      </li>
+      <li><a href="/pricing">Pricing</a></li>
       <li><a href="/meet-the-team">About</a></li>
       <li><a href="/interested" class="nav-cta">Free Audit</a></li>
     </ul>
@@ -71,7 +84,7 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero hero-facelift">
+  <section class="hero hero-split">
     <div class="hero-copy">
       <p class="hero-eyebrow">The Website · New Build or Full Redesign</p>
       <h1 class="hero-title">A SITE THAT SELLS.<br><span class="line-blue">NOT ONE THAT SITS.</span></h1>
@@ -81,18 +94,19 @@
         <a href="#work" class="btn btn-outline">See the Work</a>
       </div>
       <p class="hero-micro">Free teardown + a mockup of your brand refreshed. No commitment.</p>
+      <p class="price-hook">Website builds start at <b>$900</b>. <a href="/pricing">See all packages &rarr;</a></p>
     </div>
     <div class="hero-visual">
-      <div style="position:relative;max-width:560px;margin-left:auto;">
-        <img src="/assets/clients/titan/site-desktop.jpg" alt="Titan Comfort Solutions website designed by Banter Media" style="width:100%;display:block;border-radius:8px;border:1px solid var(--border);box-shadow:0 26px 66px rgba(13,30,53,0.20);">
+      <div style="position:relative;max-width:460px;margin-left:auto;">
+        <img src="/assets/clients/titan/site-desktop.jpg" alt="Titan Comfort Solutions website designed by Banter Media" style="width:100%;display:block;border-radius:8px;border:1px solid var(--border);box-shadow:0 14px 36px rgba(13,30,53,0.14);">
         <span style="position:absolute;top:14px;left:14px;font-size:0.54rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--navy);color:#fff;padding:6px 11px;border-radius:3px;">Premium Concept · Titan</span>
-        <img src="/assets/clients/titan/site-phone.jpg" alt="" aria-hidden="true" style="position:absolute;right:14px;bottom:14px;width:22%;display:block;border-radius:14px;border:4px solid #fff;box-shadow:0 18px 44px rgba(13,30,53,0.30);">
+        <img src="/assets/clients/titan/site-phone.jpg" alt="" aria-hidden="true" style="position:absolute;right:12px;bottom:12px;width:18%;display:block;border-radius:14px;border:4px solid #fff;box-shadow:0 12px 28px rgba(13,30,53,0.24);">
       </div>
     </div>
   </section>
 
-  <!-- PROOF STRIP -->
-  <div class="proof-strip">
+  <!-- PROOF STRIP — white band: ink names, amber ticks -->
+  <div class="proof-strip bp-white">
     <span class="ps-label">Real builds. Real brands.</span>
     <span class="ps-clients">
       <span class="ps-client">Hissy Chick Kitchen</span><span class="ps-dot"></span>
@@ -101,23 +115,22 @@
     </span>
   </div>
 
-  <!-- THE WORK / TIERS -->
-  <section id="work" style="background:var(--white);">
+  <!-- THE WORK / THREE BUILDS -->
+  <section class="bp-grid" id="work" style="background:var(--white);">
     <div class="services-header reveal">
       <div>
         <p class="section-label">The Work</p>
-        <h2 class="section-title">PICK YOUR LEVEL</h2>
-        <p class="section-sub" style="max-width:560px;">Every build ships on the brand you already have — and comes with a keepable asset package you own for good. The deeper the tier, the more you get. Tap any build to see everything inside it.</p>
+        <h2 class="section-title">THREE BUILDS. THREE DEPTHS.</h2>
+        <p class="section-sub" style="max-width:560px;">Every build ships on the brand you already have — and comes with a keepable asset package you own for good. The deeper the build, the more you keep. Tap any one to see everything inside.</p>
       </div>
-      <a href="/interested" class="btn btn-primary" style="font-size:0.7rem;">Get Your Free Audit &rarr;</a>
     </div>
 
     <div class="tier-grid reveal">
-      <!-- Tier 01 — Prototype -->
+      <!-- Prototype concept — EOT -->
       <a href="/work/eot" class="tier-card">
         <div class="tier-media">
           <img src="/assets/clients/eot/eot-site.jpg" alt="Exteriors of Texas concept website" loading="lazy">
-          <span class="tier-rank">Tier 01 · Prototype</span>
+          <span class="tier-rank">01 &middot; Starter</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-prototype">Prototype Mock</span>
@@ -134,11 +147,11 @@
         </div>
       </a>
 
-      <!-- Tier 02 — Real Launch -->
+      <!-- Live client — Hissy Chick -->
       <a href="/work/hissy-chick" class="tier-card">
         <div class="tier-media">
           <img src="/assets/showcase/hissy-after.jpg" alt="Hissy Chick Kitchen website redesigned by Banter Media" loading="lazy">
-          <span class="tier-rank">Tier 02 · Real Launch</span>
+          <span class="tier-rank">02 &middot; Standard</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-live">Live Client</span>
@@ -155,11 +168,11 @@
         </div>
       </a>
 
-      <!-- Tier 03 — Premium (flagship) -->
+      <!-- Premium concept — Titan (flagship) -->
       <a href="/work/titan" class="tier-card tier-card--flag">
         <div class="tier-media">
           <img src="/assets/clients/titan/site-desktop.jpg" alt="Titan Comfort Solutions website designed by Banter Media" loading="lazy">
-          <span class="tier-rank">Tier 03 · Premium</span>
+          <span class="tier-rank">03 &middot; Flagship</span>
         </div>
         <div class="tier-body">
           <span class="proof-flag tag-premium">Premium Concept</span>
@@ -176,78 +189,12 @@
         </div>
       </a>
     </div>
+
+    <p class="mockup-note reveal">Wondering what a build costs? <a href="/pricing" style="color:var(--blue);font-weight:600;text-decoration:none;">See packages &amp; pricing &rarr;</a></p>
   </section>
 
-  <!-- BEFORE & AFTER -->
-  <section id="proof" style="background:var(--bg);">
-    <div class="events-header reveal">
-      <div>
-        <p class="section-label">Proof</p>
-        <h2 class="section-title">BEFORE &amp; AFTER</h2>
-        <p class="section-sub">Drag any slider. Same businesses — sharper sites.</p>
-      </div>
-      <a href="/interested" class="btn btn-primary" style="font-size:0.7rem;">Get Your Free Audit &rarr;</a>
-    </div>
-
-    <div class="ba-trio reveal">
-      <!-- Hissy Chick (live) -->
-      <figure class="ba-figure">
-        <div class="ba-slider">
-          <img class="ba-img" src="/assets/showcase/hissy-after.jpg" alt="After — the new Hissy Chick Kitchen website" />
-          <img class="ba-img ba-before" src="/assets/showcase/hissy-before.jpg" alt="Before — Hissy Chick Kitchen's old website" />
-          <input type="range" class="ba-range" min="0" max="100" value="54" step="0.1" aria-label="Drag to compare Hissy Chick's old and new site" />
-          <div class="ba-divider" aria-hidden="true"></div>
-          <span class="ba-label ba-label-before">Before</span>
-          <span class="ba-label ba-label-after">After</span>
-        </div>
-        <figcaption>
-          <span class="proof-flag tag-live baf-flag">Live Client</span>
-          <p class="baf-name">HISSY CHICK KITCHEN</p>
-          <p class="baf-tag">Full redesign · Food truck</p>
-          <a href="/work/hissy-chick" class="baf-link">See the build &rarr;</a>
-        </figcaption>
-      </figure>
-
-      <!-- Titan (premium concept) -->
-      <figure class="ba-figure">
-        <div class="ba-slider">
-          <img class="ba-img" src="/assets/clients/titan/site-desktop.jpg" alt="After — the Titan Comfort Solutions concept site" />
-          <img class="ba-img ba-before" src="/assets/clients/titan/titan-before.jpg" alt="Before — Titan Comfort Solutions' current site" />
-          <input type="range" class="ba-range" min="0" max="100" value="52" step="0.1" aria-label="Drag to compare Titan's current and concept site" />
-          <div class="ba-divider" aria-hidden="true"></div>
-          <span class="ba-label ba-label-before">Before</span>
-          <span class="ba-label ba-label-after">After</span>
-        </div>
-        <figcaption>
-          <span class="proof-flag tag-premium baf-flag">Premium Concept</span>
-          <p class="baf-name">TITAN COMFORT SOLUTIONS</p>
-          <p class="baf-tag">Full brand system · HVAC</p>
-          <a href="/work/titan" class="baf-link">See the build &rarr;</a>
-        </figcaption>
-      </figure>
-
-      <!-- EOT (prototype) -->
-      <figure class="ba-figure">
-        <div class="ba-slider">
-          <img class="ba-img" src="/assets/clients/eot/eot-site.jpg" alt="After — the Exteriors of Texas concept site" />
-          <img class="ba-img ba-before" src="/assets/clients/eot/eot-before.jpg" alt="Before — Exteriors of Texas' current site" />
-          <input type="range" class="ba-range" min="0" max="100" value="52" step="0.1" aria-label="Drag to compare Exteriors of Texas' current and concept site" />
-          <div class="ba-divider" aria-hidden="true"></div>
-          <span class="ba-label ba-label-before">Before</span>
-          <span class="ba-label ba-label-after">After</span>
-        </div>
-        <figcaption>
-          <span class="proof-flag tag-prototype baf-flag">Prototype Mock</span>
-          <p class="baf-name">EXTERIORS OF TEXAS</p>
-          <p class="baf-tag">Concept prototype · Roofing</p>
-          <a href="/work/eot" class="baf-link">See the build &rarr;</a>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- WHAT YOU GET -->
-  <section style="background:var(--white);">
+  <!-- WHAT YOU GET — grid fades in, then flows THROUGH how-it-works below -->
+  <section class="bp-grid bp-grid--rise" style="background:var(--bg);">
     <div class="services-header reveal">
       <div>
         <p class="section-label">What You Get</p>
@@ -288,8 +235,8 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section style="background:var(--bg);">
+  <!-- HOW IT WORKS — grid continues from above, fading out before the white band -->
+  <section class="bp-grid" style="background:var(--white);">
     <div class="services-header reveal">
       <div>
         <p class="section-label">How It Works</p>
@@ -299,13 +246,13 @@
     <div class="steps-grid reveal">
       <div class="step-card">
         <p class="step-num">01</p>
-        <h3>The Free Audit</h3>
-        <p>We tear down your current site — or size up your first — and mock up the fix. Free, no commitment.</p>
+        <h3>Free Audit &amp; Scoping Call</h3>
+        <p>We tear down your current site — or size up your first — then get on a quick call to scope exactly what you need. Free, no commitment.</p>
       </div>
       <div class="step-card">
         <p class="step-num">02</p>
-        <h3>One Clear Quote</h3>
-        <p>You see exactly what you're saying yes to before anything starts. No hourly meter, no surprises.</p>
+        <h3>One Fixed Quote</h3>
+        <p>You get one fixed price for the whole build before anything starts. No hourly meter, no surprises.</p>
       </div>
       <div class="step-card">
         <p class="step-num">03</p>
@@ -319,7 +266,7 @@
   <section class="positioning">
     <div class="reveal">
       <h2 class="positioning-title">WE DON'T <span>REINVENT</span> YOU.</h2>
-      <p class="positioning-sub">New site or redesign, we build on the brand you already have. Same logo, same name — it just finally looks like you mean it.</p>
+      <p class="positioning-sub">New site or redesign, we build on the brand you already have. Same logo, same name — it just finally looks like you mean it. And if you're brand-new with no site at all? The Launchpad gets you online and Google-able from day one.</p>
     </div>
   </section>
 
@@ -328,7 +275,7 @@
     <div class="cta-logo-clip">
       <img src="/assets/logos/logo-white.png" alt="" class="cta-logo-accent">
     </div>
-    <p class="section-label" style="color:var(--blue-mid);">The Free Facelift Audit</p>
+    <p class="section-label" style="color:var(--blue-mid);">The Free Website Audit</p>
     <h2 class="section-title" style="color:var(--white); margin-bottom:14px;">SEE YOUR SITE<br>DONE RIGHT</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5); margin:0 auto 36px;">A free teardown of your current site plus a mockup of your brand refreshed. If you like what you see, we build it.</p>
     <a href="/interested" class="btn btn-primary">Get Your Free Audit &rarr;</a>
@@ -337,13 +284,14 @@
   <!-- FOOTER -->
   <footer>
     <div>
-      <p class="footer-brand"><img src="/assets/logos/logo-header-footer.png" alt="Banter Media Group" class="footer-logo-img"></p>
+      <p class="footer-brand"><img src="/assets/logos/logo-white.png" alt="Banter Media Group" class="footer-logo-img"><span class="nav-wordmark">Banter</span></p>
       <p class="footer-tagline">Banter Media Group &mdash; Same Brand. Whole New Look.</p>
     </div>
     <div class="footer-right">
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/work">Work</a></li>
+        <li><a href="/work">Portfolio</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/meet-the-team">About</a></li>
         <li><a href="/testimonials">Testimonials</a></li>
         <li><a href="/faq">FAQ</a></li>
